@@ -1,0 +1,222 @@
+input
+	font-feature-settings: "lnum"
+
+.i-input
+	display: flex
+	flex-direction: column
+
+	gap: 8px
+
+.i-input.disabled
+	cursor: default!important
+	pointer-events: none !important
+	.i-input__placeholder,
+	.i-input__error,
+	.i-input__notice,
+	.i-input__field,
+	.i-input__field::placeholder
+		color: var(--gray-50)!important
+		cursor: default!important
+		pointer-events: none !important
+	.i-input__field
+		border-color: var(--gray-50)!important
+
+.i-input__inner
+	position: relative
+	display: flex
+	flex-direction: column-reverse
+	width: 100%
+	height: 56px
+
+.i-input--buy-one-click,
+.i-input--promocode
+	.i-input__inner
+		height: 40px
+		@media (min-width: 768px)
+			height: 48px
+	.i-input__field
+		border-color: var(--bg-highlight)
+		@media (min-width: 768px)
+			border-color: var(--gray)
+
+.i-input--buy-one-click
+	.i-input__placeholder
+		background-color: var(--black)
+
+.i-input--promocode
+	@media (min-width: 1000px)
+		.i-input__placeholder
+			background-color: var(--bg-highlight)
+
+.i-input__field
+	padding-right: 16px
+	padding-left: 16px
+	width: 100%
+	height: 100%
+	outline: none
+	border: 1px solid var(--white)
+	border-radius: 8px
+	background-color: transparent
+	color: var(--white)
+	font-weight: 400
+	font-size: 16px
+	line-height: 22px
+	transition: 0.3s
+	&::placeholder
+		color: transparent
+	&:placeholder-shown
+		border-color: var(--gray)
+
+.i-input__placeholder
+	position: absolute
+	top: 50%
+	left: 12px
+	padding-right: 4px
+	padding-left: 4px
+	background-color: var(--bg)
+	color: #727d7d
+	font-weight: 500
+	font-size: 16px
+	line-height: 22px
+	transition: 0.3s
+	transform: translateY(-50%)
+	pointer-events: none
+
+.dark-placeholder .i-input__placeholder
+	background-color: var(--black)
+
+.i-input__placeholder--active
+	top: -6px
+	color: var(--white)
+	font-size: 12px
+	line-height: 12px
+	transform: translateY(0)
+
+.i-input__field
+	&:focus
+		border-color: var(--yellow)
+	&:read-only:focus
+		border-color: var(--gray)
+	&:focus + .i-input__placeholder
+		color: var(--yellow)
+	&:read-only:focus + .i-input__placeholder
+		color: #727d7d
+
+.i-input__notice,
+.i-input__error
+	font-weight: 500
+	font-size: 12px
+	line-height: 14px
+	&:empty
+		display: none
+
+.i-input__notice
+	color: var(--gray)
+
+.i-input__error
+	position: relative
+	padding-left: 27px
+	color: var(--red)
+	&::before
+		position: absolute
+		top: calc(50% - 1px)
+		left: 0
+		width: 24px
+		height: 24px
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='red' d='M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 7.5v5.25'/%3E%3Cpath fill='%23fff' d='M12 17.25A1.125 1.125 0 1 0 12 15a1.125 1.125 0 0 0 0 2.25Z'/%3E%3C/svg%3E")
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+		content: ""
+		transform: translateY(-50%)
+
+// Error state
+
+.i-input
+	.i-input__error
+		display: none
+
+.i-input.i-error
+	.i-input__error
+		display: block
+
+.i-input.i-error
+	.i-input__notice
+		display: none
+
+.i-input.i-error
+	.i-input__field
+		border-color: var(--red)
+	.i-input__placeholder
+		color: var(--red)
+
+.i-input__clear-btn
+	position: absolute
+	top: 50%
+	right: 12px
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 24px
+	height: 24px
+	outline: unset
+	border: unset
+	border-color: transparent
+	color: #a8a8a8
+	cursor: pointer
+	transition: 0.3s
+	transform: translateY(-50%)
+	&:hover
+		color: var(--white)
+
+.i-input__submit-btn
+	position: absolute
+	top: 50%
+	right: 3px
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 138px
+	height: 34px
+	border-radius: 4px
+	background-color: var(--bg-highlight)
+	color: var(--white)
+	text-align: center
+	font-weight: 500
+	font-size: 14px
+	line-height: 16px
+	cursor: pointer
+	transform: translateY(-50%)
+	@media (min-width: 768px)
+		right: 4px
+		height: 40px
+		background-color: var(--bg-base)
+		color: var(--gray)
+		font-size: 16px
+		line-height: 19px
+		transition: 0.3s
+		&:hover
+			color: var(--white)
+
+textarea
+	padding: 16px
+	width: 100%
+	height: 100%
+	outline: none
+	border: 1px solid var(--white)
+	border-radius: 8px
+	background-color: transparent
+	color: var(--white)
+	font-weight: 400
+	font-size: 16px
+	line-height: 22px
+	resize: none
+	transition: 0.3s
+	&::placeholder
+		color: #727d7d
+	&:placeholder-shown
+		border-color: var(--gray)
+	&:active,
+	&:focus
+		outline: none
+		border-color: var(--yellow)

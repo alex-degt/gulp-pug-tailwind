@@ -1,0 +1,31 @@
+extends ./../layouts/main.pug
+
+block variables
+	- const title = "Список шаблонів";
+
+block css
+	link(rel="stylesheet" href="css/all-pages.css")
+
+block content
+
+	style.
+		.index-page-wrapper {
+			color: #000;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+
+	.index-page-wrapper
+		ol
+			li
+				a(href="home.html" target="_blank")
+					| Головна
+			li
+				a(href="account.html" target="_blank")
+					| Особистий кабінет
+
+
+

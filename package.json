@@ -1,0 +1,24 @@
+{
+	"name": "dev",
+	"version": "1.0.1",
+	"description": "StarterKit with Gulp",
+	"main": "gulpfile.js",
+	"scripts": {
+		"dev": "gulp",
+		"build": "gulp prod",
+		"prod": "gulp prod"
+	},
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"browser-sync": "^2.27.11",
+		"gulp-notify": "^4.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-pug": "^5.0.0",
+		"sass": "^1.58.3",
+		"gulp-sass": "^5.1.0",
+		"gulp-sass-glob": "^1.1.0",
+		"autoprefixer": "^10.4.13",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean-css": "^4.3.0"
+	}
+}

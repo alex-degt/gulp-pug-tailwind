@@ -1,0 +1,81 @@
+$text-base: 1rem
+$text-lg: 1.125rem
+$text-2xl: 1.5rem
+
+.container-typography
+	margin-right: auto
+	margin-left: auto
+	padding-right: 15px
+	padding-left: 15px
+	max-width: 870px
+
+.typography
+	h1
+		margin-bottom: 4px
+		color: var(--primary-800)
+		font-weight: 700
+		font-size: $text-2xl
+		@media (min-width: 768px)
+			text-align: center
+			font-size: 40px
+	h2,
+	h3,
+	h4,
+	h5
+		margin-bottom: 0.5rem
+		color: var(--primary-800)
+		font-weight: 700
+		font-size: $text-lg
+		@media (min-width: 768px)
+			font-size: $text-2xl
+
+.typography
+	p
+		margin-bottom: 1rem
+		color: var(--primary-800)
+		font-size: $text-base
+
+.typography
+	time
+		display: block
+		margin-bottom: 1rem
+		width: 100%
+		color: var(--black)
+		text-align: center
+		font-size: $text-base
+		line-height: 30px
+
+.typography
+	img
+		flex-shrink: 0
+		margin-top: 1rem
+		margin-bottom: 1rem
+		width: 100%
+		@media (min-width: 768px)
+			margin-bottom: 2rem
+
+.typography
+	blockquote
+		margin: 0.5rem 0
+		padding: 1.5rem
+		border: 1px solid var(--gray-500)
+		color: var(--primary-800)
+		font-size: $text-lg
+		@media (min-width: 768px)
+			font-size: $text-2xl
+
+.typography
+	ul
+		margin-bottom: 1rem
+		padding-left: 1.5rem
+		list-style-type: disc
+	ol
+		margin-bottom: 1rem
+		padding-left: 1.5rem
+		list-style-type: auto
+	ul,
+	ol
+		li
+			margin-bottom: 0.5rem
+			&:last-child
+				margin-bottom: 0

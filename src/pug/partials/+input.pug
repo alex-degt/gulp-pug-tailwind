@@ -1,0 +1,20 @@
+mixin input(object)
+	div(class=`i-input ${object.wrapperClass}`)
+		label(class=`i-input__inner ${object.labelClass}`)
+			input.i-input__field(value=`${object.inputValue}` id=`${object.id}` name=`${object.inputName}` type=`${object.inputType}` placeholder=" ")
+			span.i-input__placeholder
+				| #{object.placeholder}
+		.i-input__error
+			| #{object.errorMessage}
+		.i-input__notice
+			| #{object.noticeMessage}
+
+//- +input({
+//- 	labelClass: "dark-placeholder",
+//- 	inputType: "text",
+//- 	inputValue: "0",
+//- 	inputName: "",
+//- 	placeholder: "",
+//- 	errorMessage: "",
+//- 	noticeMessage: ""
+//- })

@@ -1,0 +1,42 @@
+extends ../../layouts/main.pug
+
+block variables
+	- const title = "Особистий кабінет";
+
+block css
+	link(rel="stylesheet" href="css/all-pages.css")
+	link(rel="stylesheet" href="css/account.css")
+
+block js
+	script(src="js/account.js")
+
+block content
+
+	.container
+
+		h1
+			| Сторінка - особистий кабінет
+
+		include _personal-data.pug
+
+
+block modals
+	include _modal-account.pug
+
+	.developer-window
+		.developer-window__row
+			.developer-window__title
+				| Модальні вікна
+			button(type="button").developer-window__close
+				| X
+		.developer-window__wrapper
+			a(href="#modal-example" rel="modal:open")
+				| Приклад
+			a(href="#modal-account" rel="modal:open")
+				| Особистий кабінет
+		script.
+			document.addEventListener("DOMContentLoaded", () => {
+				$(".developer-window__close").click(function() {
+					$(this).parents(".developer-window").remove()
+				})
+			})
