@@ -39,17 +39,18 @@ npm run prod
 
 ## Опис задач 
 
-1. **copyJs()** - скопіювати js-файли з `src/js/*` в `docs/js/` (без обробки)
-2. **copyImg()** - скопіювати зображення з `src/img/*` в `docs/img/` (без обробки)
-3. **copyLibs()** - скопіювати бібліотеки з `src/libs/*` в `docs/libs/` (без обробки)
-4. **copyFonts()** - скопіювати шрифти з `src/fonts/*` в `docs/fonts/` (без обробки)
-5. **devStyles()** - обробити sass-файли з `src/sass/*` та покласти в `docs/css`
-6. **prodStyles()** - обробити sass-файли з `src/sass/*` та покласти в `docs/css` з постобробкою для production
-7. **jade()** - обробити pug-файли з `src/pug/gulp-pages/*` та покласти в `docs/`
-8. **jadeProd()** - обробити pug-файли з `src/pug/gulp-pages/*` та покласти в `docs/` з постобробкою для production
-7. **livePreview()** - запустити локальний сервер
-8. **watchFiles()** - відстежувати зміну файлів
-9. **previewReload()** - перезавантажити сервер якщо файли змінились
+1. **clean()** - видалити вміст `docs`
+2. **copyJs()** - скопіювати js-файли з `src/js/*` в `docs/js/` (без обробки)
+3. **copyImg()** - скопіювати зображення з `src/img/*` в `docs/img/` (без обробки)
+4. **copyLibs()** - скопіювати бібліотеки з `src/libs/*` в `docs/libs/` (без обробки)
+5. **copyFonts()** - скопіювати шрифти з `src/fonts/*` в `docs/fonts/` (без обробки)
+6. **devStyles()** - обробити sass-файли з `src/sass/*` та покласти в `docs/css`
+7. **prodStyles()** - обробити sass-файли з `src/sass/*` та покласти в `docs/css` з постобробкою для production
+8. **jade()** - обробити pug-файли з `src/pug/gulp-pages/*` та покласти в `docs/`
+9. **jadeProd()** - обробити pug-файли з `src/pug/gulp-pages/*` та покласти в `docs/` з постобробкою для production
+10. **livePreview()** - запустити локальний сервер
+11. **watchFiles()** - відстежувати зміну файлів
+12. **previewReload()** - перезавантажити сервер якщо файли змінились
 
 ## Корисні сторонні сервіси
 
