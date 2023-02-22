@@ -4,6 +4,7 @@
 const { src, dest, task, watch, series, parallel } = require("gulp");
 
 // Загальні модулі
+const del = require("del"); 
 const browserSync = require("browser-sync").create();
 const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
@@ -20,6 +21,11 @@ const cleancss = require("gulp-clean-css");
 //////////////////////////////////////////////////////////////////////////////////////////
 
 // Default
+
+function clean() {
+  console.log("\n\t", "Cleaning docs folder (docs/) for fresh start.\n");
+  return del("./docs/");
+}
 
 function copyJs() {
 	return src("./src/js/**/*").pipe(dest("./docs/js/"));
@@ -151,6 +157,7 @@ function jadeProd() {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 exports.default = series(
+	clean,
 	copyJs,
 	copyImg,
 	copyLibs,
@@ -161,6 +168,7 @@ exports.default = series(
 );
 
 exports.prod = series(
+	clean,
 	copyJs,
 	copyImg,
 	copyFonts,
