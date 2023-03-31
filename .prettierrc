@@ -1,0 +1,18 @@
+{
+	"useTabs": true,
+	"tabWidth": 4,
+	"singleQuote": false,
+	"htmlWhitespaceSensitivity": "ignore",
+	"bracketSameLine": true,
+	"printWidth": 10000,
+	"pugAttributeSeparator": "as-needed",
+	"pugCommentPreserveSpaces": "keep-all",
+	"pugSortAttributes": "as-is",
+	"pugWrapAttributesThreshold": 6,
+	"pugClassNotation": "as-is",
+	"pugIdNotation": "literal",
+	"pugClassLocation": "after-attributes",
+	"pugPreserveAttributeBrackets": false,
+	"plugins": ["@prettier/plugin-pug", "prettier-plugin-tailwindcss"],
+	"pluginSearchDirs": false
+}
