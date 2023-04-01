@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="img/favicon/site.webmanifest" />
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" />
+		<!-- CSS - всі сторінки-->
+		<link rel="stylesheet" href="css/tailwind.css?v=1" />
+		<link rel="stylesheet" href="libs/jquery-modal/jquery.modal.min.css" />
+		<!-- CSS - тільки для цієї сторінки-->
+		<link rel="stylesheet" href="css/all-pages.css" />
+		<title>Список шаблонів</title>
+	</head>
+	<body class="body">
+		<header class="header" id="header"><span>Хедер</span></header>
+		<main class="main" id="main">
+			<style>
+				.header,
+				.footer {
+					display: none;
+				}
+			</style>
+			<section class="flex h-full items-center justify-center py-6">
+				<div class="container">
+					<div class="flex flex-col rounded-md bg-white p-4 shadow-md lg:rounded-3xl lg:p-10">
+						<div class="flex items-center justify-center gap-2 border-b border-gray-300 pb-4 lg:items-start">
+							<img class="lg:mt-1" src="./img/icons-content/gulp-logo.svg" alt="" width="16" height="16" loading="lazy" aria-hidden="true" />
+							<h1 class="text-center text-3xl font-bold lg:text-5xl">Gulp-збірка для верстки</h1>
+						</div>
+						<div class="mt-4 text-base text-black">
+							<p>Gulp-збірка для верстки з використанням шаблонізатора PUG, CSS фреймворку Tailwind CSS та препроцесора SASS для середніх за розміром проєктів (інтернет-магазин, корпоративний сайт, сервіс).</p>
+						</div>
+						<div class="mt-5 flex flex-col items-center justify-between gap-1 lg:flex-row lg:gap-5">
+							<img src="./img/icons-content/pug-logo.svg" alt="" width="200" height="100" loading="lazy" aria-hidden="true" />
+							<img src="./img/icons-content/tailwindcss-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true" />
+							<img src="./img/icons-content/sass-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true" />
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Перелік сторінок</h2>
+							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li><a class="text-blue-400 hover:underline" href="home.html" target="_blank">Головна</a></li>
+								<li><a class="text-blue-400 hover:underline" href="account.html" target="_blank">Особистий кабінет</a></li>
+							</ul>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Загальна інформація</h2>
+							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">+input.pug</span>
+									,
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">+input.sass</span>
+									-
+									<a class="text-blue-400 hover:underline" href="https://pugjs.org/language/mixins.html" target="_blank">міксин</a>
+									, назва файлу завжди починається з +.
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_section.pug</span>
+									,
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_section.sass</span>
+									- шаблон, назва файлу завжди починається з _.
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">include _section.pug</span>
+									- підключити pug-файл. Шлях відносно поточного файлу.
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">@import _section.sass</span>
+									- підключити sass-файл. Шлях відносно поточного файлу.
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
+									=>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block css</span>
+									,
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block js</span>
+									,
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block content</span>
+									,
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block modal</span>
+									- місця, в яких буде знаходитись код з дочірних сторінок, що наслідують цей шаблон.
+								</li>
+							</ul>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Структура - PUG</h2>
+							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/</span>
+									<span>
+										- містить шаблон всіх сторінок
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">main.pug</span>
+										та файли, які можуть бути використані на кожній сторінці (хедер, футер, модальні вікна авторизації, ...).
+									</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/pages/</span>
+									<span>
+										- назва папки відповідає сторінці, має основний файл
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">index.pug</span>
+										та секції (блоки) цієї сторінки
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_promo.pug</span>
+										.
+									</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/partials/</span>
+									<span>
+										- папка для розташування глобальних міксинів. Глобальні міксини підключаються в
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
+										.
+									</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/templates/</span>
+									<span>- папка для розміщення шаблонного коду (хлібні крихти, пагінація, ...).</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/</span>
+									<span>
+										- звідси таск-менеджер візьме pug-файл та скомпілює html-файл з відповідною назвою. Всі сторінки крім
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">index.pug</span>
+										просто підключають основний файл відповідної сторінки з
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/pages/</span>
+										.
+									</span>
+								</li>
+							</ul>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Структура - SASS</h2>
+							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/base/</span>
+									<span>- набір загальних стилів.</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/pages/</span>
+									<span>- назва папки відповідає сторінці. Містить в собі стилі для секцій (блоків) відповідної сторінки.</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/partials/</span>
+									<span>- стилі глобальних міксинів та шаблонів.</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/tailwind/</span>
+									<span>- базовий tailwind-файл.</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/</span>
+									<span>- з кореня папки таск-менеджер візьме sass-файл та скомпілює css-файл з відповідною назвою.</span>
+								</li>
+							</ul>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Структура - IMG</h2>
+							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/content/</span>
+									<span>- контенті зображення (зображення товару, зображення для блогу, баннер, ...)</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/favicon/</span>
+									<span>- фавікон та маніфест-файл</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/icons/</span>
+									<span>- інтерфейсні іконки (стрілка, пошук, чекбокс, ..)</span>
+								</li>
+								<li>
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/icons-content/</span>
+									<span>- контентні іконки (логотипи, декоративні елементи, ..)</span>
+								</li>
+							</ul>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Запитання і відповіді</h2>
+							<div class="mt-2 flex flex-col gap-4 lg:px-4">
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">Чому автоматично ніяк не обробляється (стискається) растрова графіка?</dt>
+									<dd>
+										Особисто мені цей функціонал не потрібен. Як контентні зображення я використовую
+										<a class="text-blue-400 hover:underline" href="https://picsum.photos/" target="_blank">плейсхоледери</a>
+										, а декоративні елементи якщо вони растрові - обробляю в ручному режимі.
+									</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">Чому автоматично ніяк не обробляється (стискається) векторна графіка?</dt>
+									<dd>Тому що постійно доводиться змінювати правила обробки від проєкту до проєкту. Якість векторної графіки в дизайні буває різною, SVG може містити в собі то растрову графіку, то скрипти, то прозорість замість кольору. Це не дуже зручно, тож прийнято рішення обробляти в ручному режимі.</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">Чому не використовується svg-спрайт?</dt>
+									<dd>Тому що з цим зручно працювати лише на етапі верстки. На етапі підтримки та розвитку проєкту коли все змінюється - важко тримати його в актуальному стані.</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">
+										В sass-файлах можна знайти
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_HOTFIX.sass</span>
+										. Що це?
+									</dt>
+									<dd>Цей файл створено для бекенд-розробників на той випадок, коли треба терміново щось пофіксити, але немає часу розбиратись (або він не дуже в верстку). Вони пишуть туди будь-який "брудний" код, потім я його переробляю і переношу куди потрібно.</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">
+										Навіщо в файлі
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
+										є змінна
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">var version = '?v=1'</span>
+									</dt>
+									<dd>Ця змінна використовується для тих випадків, коли треба оновити файли верстки на хостингу з кешуванням. Зміна версії призведе до сприйняття файлу сервером як нового.</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">Навіщо створювати окремі css-файли під кожну сторінку?</dt>
+									<dd>Це зручно з точки зору оптимізації та підтримки великих проєктів.</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">
+										Якщо файл
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.css</span>
+										використовується на всіх сторінках - чому він підключається на конкретній сторінці перед іншими css-файлами а не в
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
+										?
+									</dt>
+									<dd>
+										Тому що на конкретній сторінці можуть підключатися сторонні бібліотеки. У випадку коли нам потрібно кастомізувати цю бібліотеку перезаписом стилів в
+										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.css</span>
+										порядок підключення файлів може мати значення.
+									</dd>
+								</dl>
+								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
+									<dt class="text-xl font-bold">Навіщо помаранчевий блок з посиланнями що відкривають модальні вікна?</dt>
+									<dd>Для бекенд-розробників, щоб завжди було очевидно що є прихованним на цій конкретній сторінці.</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer" id="footer"><span>Футер</span></footer>
+		<!-- Modals - всі сторінки-->
+		<div class="modal modal--example" id="modal-global">
+			<div class="modal__wrapper">
+				<div class="modal__head mb-2">Модальне вікно - глобальне</div>
+				<div class="modal__content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque porro dolorum ducimus laborum sequi, vero odio velit earum. Ipsum consequatur molestiae dicta praesentium porro quo enim architecto, in omnis error?</div>
+			</div>
+		</div>
+		<!-- Modals - конкретна сторінка-->
+		<!-- JS - всі сторінки-->
+		<script src="libs/jquery/jquery-3.6.3.min.js"></script>
+		<script src="libs/jquery-ui/jquery-ui.min.js"></script>
+		<script src="libs/jquery-modal/jquery.modal.min.js"></script>
+		<!-- JS - тільки для цієї сторінки-->
+		<script src="js/all-pages.js"></script>
+	</body>
+</html>

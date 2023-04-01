@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="img/favicon/site.webmanifest" />
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" />
+		<!-- CSS - всі сторінки-->
+		<link rel="stylesheet" href="css/tailwind.css?v=1" />
+		<link rel="stylesheet" href="libs/jquery-modal/jquery.modal.min.css" />
+		<!-- CSS - тільки для цієї сторінки-->
+		<link rel="stylesheet" href="css/all-pages.css?v=1" />
+		<link rel="stylesheet" href="css/home.css?v=1" />
+		<title>Головна</title>
+	</head>
+	<body class="body">
+		<header class="header" id="header"><span>Хедер</span></header>
+		<main class="main" id="main">
+			<div class="promo">
+				<div class="container">
+					<div class="promo__wrapper">
+						<h1>Сторінка - Головна</h1>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer" id="footer"><span>Футер</span></footer>
+		<!-- Modals - всі сторінки-->
+		<div class="modal modal--example" id="modal-global">
+			<div class="modal__wrapper">
+				<div class="modal__head mb-2">Модальне вікно - глобальне</div>
+				<div class="modal__content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque porro dolorum ducimus laborum sequi, vero odio velit earum. Ipsum consequatur molestiae dicta praesentium porro quo enim architecto, in omnis error?</div>
+			</div>
+		</div>
+		<!-- Modals - конкретна сторінка-->
+		<div class="modal modal--example" id="modal-home">
+			<div class="modal__wrapper">
+				<div class="modal__head mb-2">Модальне вікно - головна</div>
+				<div class="modal__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nemo esse reiciendis unde molestias, vitae explicabo delectus laborum corrupti sit beatae praesentium libero doloremque. Pariatur aut, quo nulla, soluta quos odio id voluptatum, quis rem facilis reprehenderit error fugiat nisi.</div>
+			</div>
+		</div>
+		<div class="developer-window">
+			<div class="developer-window__row">
+				<div class="developer-window__title">Модальні вікна</div>
+				<button class="developer-window__close" type="button">X</button>
+			</div>
+			<div class="developer-window__wrapper">
+				<a href="#modal-global" rel="modal:open">Модальне вікно - глобальне</a>
+				<a href="#modal-home" rel="modal:open">Модальне вікно - головна</a>
+			</div>
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					$(".developer-window__close").click(function () {
+						$(this).parents(".developer-window").remove();
+					});
+				});
+			</script>
+		</div>
+		<!-- JS - всі сторінки-->
+		<script src="libs/jquery/jquery-3.6.3.min.js"></script>
+		<script src="libs/jquery-ui/jquery-ui.min.js"></script>
+		<script src="libs/jquery-modal/jquery.modal.min.js"></script>
+		<!-- JS - тільки для цієї сторінки-->
+		<script src="js/home.js"></script>
+		<script src="js/all-pages.js"></script>
+	</body>
+</html>
