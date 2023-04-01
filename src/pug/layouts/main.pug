@@ -1,6 +1,6 @@
 //- mixins global
 include ../partials/+input.pug
-include ../partials/+global-mixin.pug
+include ../partials/+icon-pug.pug
 
 //- version of css file
 - var version = "?v=1";
@@ -31,20 +31,18 @@ html(lang="uk")
 		// CSS - тільки для цієї сторінки
 		block css
 
-		title #{title}
+		title #{ title }
 
 	body.body
-
 		include _header.pug
 
 		main#main.main
-
 			block content
 
 		include _footer.pug
 
 		// Modals - всі сторінки
-		include modals/_example.pug
+		include modals/_global-modal.pug
 
 		// Modals - конкретна сторінка
 		block modals
@@ -57,4 +55,3 @@ html(lang="uk")
 		// JS - тільки для цієї сторінки
 		block js
 		script(src="js/all-pages.js")
-		

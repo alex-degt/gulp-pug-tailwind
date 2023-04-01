@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .user-class {
-	@apply block bg-red-100 text-2xl;
-} */
+html,
+body {
+	@apply bg-gradient-to-r from-violet-500 to-fuchsia-500;
+}

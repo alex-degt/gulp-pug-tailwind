@@ -14,15 +14,11 @@ block js
 	script(src="js/home.js")
 
 block content
-
-	.container
-		h1
-			| Сторінка - головна
-
-		include _promo.pug
-
+	include _promo.pug
 
 block modals
+	include _modal-home.pug
+
 	.developer-window
 		.developer-window__row
 			.developer-window__title
@@ -30,11 +26,13 @@ block modals
 			button(type="button").developer-window__close
 				| X
 		.developer-window__wrapper
-			a(href="#modal-example" rel="modal:open")
-				| Приклад
+			a(href="#modal-global" rel="modal:open")
+				| Модальне вікно - глобальне
+			a(href="#modal-home" rel="modal:open")
+				| Модальне вікно - головна
 		script.
 			document.addEventListener("DOMContentLoaded", () => {
-				$(".developer-window__close").click(function() {
-					$(this).parents(".developer-window").remove()
-				})
-			})
+				$(".developer-window__close").click(function () {
+					$(this).parents(".developer-window").remove();
+				});
+			});

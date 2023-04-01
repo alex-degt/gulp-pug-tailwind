@@ -11,18 +11,13 @@ block js
 	script(src="js/account.js")
 
 block content
-
-	.container
-
-		h1
-			| Сторінка - особистий кабінет
-
-		include _personal-data.pug
-
+	.account-promo
+		.container
+			.account-promo__wrapper
+				h1
+					| Сторінка - #{ title }
 
 block modals
-	include _modal-account.pug
-
 	.developer-window
 		.developer-window__row
 			.developer-window__title
@@ -30,13 +25,11 @@ block modals
 			button(type="button").developer-window__close
 				| X
 		.developer-window__wrapper
-			a(href="#modal-example" rel="modal:open")
-				| Приклад
-			a(href="#modal-account" rel="modal:open")
-				| Особистий кабінет
+			a(href="#modal-global" rel="modal:open")
+				| Модальне вікно - глобальне
 		script.
 			document.addEventListener("DOMContentLoaded", () => {
-				$(".developer-window__close").click(function() {
-					$(this).parents(".developer-window").remove()
-				})
-			})
+				$(".developer-window__close").click(function () {
+					$(this).parents(".developer-window").remove();
+				});
+			});

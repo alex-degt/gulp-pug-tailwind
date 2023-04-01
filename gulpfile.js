@@ -4,7 +4,7 @@
 const { src, dest, task, watch, series, parallel } = require("gulp");
 
 // Загальні модулі
-const del = require("del"); 
+const del = require("del");
 const browserSync = require("browser-sync").create();
 const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
@@ -23,8 +23,8 @@ const cleancss = require("gulp-clean-css");
 // Default
 
 function clean() {
-  console.log("\n\t", "Cleaning docs folder (docs/) for fresh start.\n");
-  return del("./docs/");
+	console.log("\n\t", "Cleaning docs folder (docs/) for fresh start.\n");
+	return del("./docs/");
 }
 
 function copyJs() {
@@ -111,7 +111,7 @@ function previewReload(done) {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-// PRODUCTION-таски
+// PRODUCTION
 
 function prodStyles() {
 	return src("./src/sass/*.sass")

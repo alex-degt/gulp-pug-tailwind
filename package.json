@@ -1,38 +1,38 @@
 {
-  "name": "dev",
-  "version": "1.0.1",
-  "description": "StarterKit with Gulp + Tailwind CSS",
-  "main": "gulpfile.js",
-  "scripts": {
-    "gulp-dev": "gulp",
-    "gulp-prod": "gulp prod",
-    "tailwind": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --watch",
-    "tailwind-prod": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --minify",
-    "html-formatting": "npx prettier --write docs/**/*.html",
-    "dev": "npm-run-all --parallel gulp-dev tailwind",
-    "prod": "npm-run-all gulp-prod html-formatting tailwind-prod"
-  },
-  "devDependencies": {
-    "@prettier/plugin-pug": "^2.4.2",
-    "autoprefixer": "^10.4.14",
-    "browser-sync": "^2.28.3",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-notify": "^4.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-pug": "^5.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sass-glob": "^1.1.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.6",
-    "sass": "^1.59.2",
-    "tailwindcss": "^3.2.7"
-  },
-  "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2"
-  }
+	"name": "gulp-pug-tailwind",
+	"version": "1.0.2",
+	"description": "StarterKit with Gulp + Tailwind CSS",
+	"main": "gulpfile.js",
+	"scripts": {
+		"gulp-dev": "gulp",
+		"gulp-prod": "gulp prod",
+		"tailwind": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --watch",
+		"tailwind-prod": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --minify",
+		"html-formatting": "npx prettier --write docs/**/*.html",
+		"dev": "npm-run-all --parallel gulp-dev tailwind",
+		"prod": "npm-run-all gulp-prod html-formatting tailwind-prod"
+	},
+	"devDependencies": {
+		"@prettier/plugin-pug": "^2.4.2",
+		"autoprefixer": "^10.4.14",
+		"browser-sync": "^2.28.3",
+		"del": "^6.0.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-notify": "^4.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-pug": "^5.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-sass-glob": "^1.1.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.21",
+		"prettier": "^2.8.7",
+		"prettier-plugin-tailwindcss": "^0.2.6",
+		"sass": "^1.59.2",
+		"tailwindcss": "^3.2.7"
+	},
+	"dependencies": {
+		"@tailwindcss/line-clamp": "^0.4.2"
+	}
 }
