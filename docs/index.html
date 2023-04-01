@@ -42,8 +42,46 @@
 							<img src="./img/icons-content/tailwindcss-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true" />
 							<img src="./img/icons-content/sass-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true" />
 						</div>
+						<div class="mt-4 text-base text-black">
+							<p>З метою оптимізації кінцевого результату та зручності підтримки продукту кожна HTML-сторінка містить в собі:</p>
+							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li>
+									загальні CSS-файли - ті, що використовуються на всіх сторінках (як власні стилі, так і бібліотеки):
+									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">tailwind.css</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.css</span></li>
+									</ul>
+								</li>
+								<li>
+									унікальні CSS-файли - ті, що використовуються лише на цій сторінці (як власні стилі, так і бібліотеки):
+									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">owl.carousel.min.css</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">owl.theme.default.min.css</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">product.css</span></li>
+									</ul>
+								</li>
+								<li>
+									загальні JS-файли - ті, що використовуються на всіх сторінках (як власні скрипти, так і бібліотеки):
+									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">jquery.min.js</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.js</span></li>
+									</ul>
+								</li>
+								<li>
+									унікальні JS-файли - ті, що використовуються лише на цій сторінці (як власні скрипти, так і бібліотеки):
+									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">owl.carousel.min.js</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
+										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">product.js</span></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Перелік сторінок</h2>
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Демонстраційні сторінки</h2>
 							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
 								<li><a class="text-blue-400 hover:underline" href="home.html" target="_blank">Головна</a></li>
 								<li><a class="text-blue-400 hover:underline" href="account.html" target="_blank">Особистий кабінет</a></li>
@@ -102,7 +140,7 @@
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/pages/</span>
 									<span>
-										- назва папки відповідає сторінці, має основний файл
+										- назва теки відповідає сторінці, має основний файл
 										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">index.pug</span>
 										та секції (блоки) цієї сторінки
 										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_promo.pug</span>
@@ -112,14 +150,14 @@
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/partials/</span>
 									<span>
-										- папка для розташування глобальних міксинів. Глобальні міксини підключаються в
+										- тека для розташування глобальних міксинів. Глобальні міксини підключаються в
 										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
 										.
 									</span>
 								</li>
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/templates/</span>
-									<span>- папка для розміщення шаблонного коду (хлібні крихти, пагінація, ...).</span>
+									<span>- тека для розміщення шаблонного коду (хлібні крихти, пагінація, ...).</span>
 								</li>
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/</span>
@@ -142,7 +180,7 @@
 								</li>
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/pages/</span>
-									<span>- назва папки відповідає сторінці. Містить в собі стилі для секцій (блоків) відповідної сторінки.</span>
+									<span>- назва теки відповідає сторінці. Містить в собі стилі для секцій (блоків) відповідної сторінки.</span>
 								</li>
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/partials/</span>
@@ -154,7 +192,7 @@
 								</li>
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/</span>
-									<span>- з кореня папки таск-менеджер візьме sass-файл та скомпілює css-файл з відповідною назвою.</span>
+									<span>- з кореня теки таск-менеджер візьме sass-файл та скомпілює css-файл з відповідною назвою.</span>
 								</li>
 							</ul>
 						</div>
@@ -176,6 +214,90 @@
 								<li>
 									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/icons-content/</span>
 									<span>- контентні іконки (логотипи, декоративні елементи, ..)</span>
+								</li>
+							</ul>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Опис gulp-задач</h2>
+							<ul class="mt-2 flex list-decimal flex-col gap-2 pl-6">
+								<li>
+									<span class="mr-2 font-bold">clean()</span>
+									- видалити вміст
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs</span>
+								</li>
+								<li>
+									<span class="mr-2 font-bold">copyJs()</span>
+									- скопіювати js-файли з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/js/*</span>
+									в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/js/</span>
+									(без обробки)
+								</li>
+								<li>
+									<span class="mr-2 font-bold">copyImg()</span>
+									- скопіювати зображення з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/*</span>
+									в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/img/</span>
+									(без обробки)
+								</li>
+								<li>
+									<span class="mr-2 font-bold">copyLibs()</span>
+									- скопіювати бібліотеки з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/libs/*</span>
+									в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/libs/</span>
+									(без обробки)
+								</li>
+								<li>
+									<span class="mr-2 font-bold">copyFonts()</span>
+									- скопіювати шрифти з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/fonts/*</span>
+									в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/fonts/</span>
+									(без обробки)
+								</li>
+								<li>
+									<span class="mr-2 font-bold">devStyles()</span>
+									- обробити sass-файли з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/*</span>
+									та покласти в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/css</span>
+								</li>
+								<li>
+									<span class="mr-2 font-bold">prodStyles()</span>
+									- обробити sass-файли з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/*</span>
+									та покласти в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/css</span>
+									з постобробкою для production
+								</li>
+								<li>
+									<span class="mr-2 font-bold">jade()</span>
+									- обробити pug-файли з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/*</span>
+									та покласти в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/</span>
+								</li>
+								<li>
+									<span class="mr-2 font-bold">jadeProd()</span>
+									- обробити pug-файли з
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/*</span>
+									та покласти в
+									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/</span>
+									з постобробкою для production
+								</li>
+								<li>
+									<span class="mr-2 font-bold">livePreview()</span>
+									- запустити локальний сервер
+								</li>
+								<li>
+									<span class="mr-2 font-bold">watchFiles()</span>
+									- відстежувати зміну файлів
+								</li>
+								<li>
+									<span class="mr-2 font-bold">previewReload()</span>
+									- перезавантажити сервер якщо файли змінились
 								</li>
 							</ul>
 						</div>
@@ -238,6 +360,23 @@
 									<dd>Для бекенд-розробників, щоб завжди було очевидно що є прихованним на цій конкретній сторінці.</dd>
 								</dl>
 							</div>
+						</div>
+						<div class="mt-8 flex flex-col gap-2">
+							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Корисні сторонні сервіси</h2>
+							<ol class="mt-2 flex list-disc flex-col gap-2 pl-6">
+								<li>
+									<a class="text-blue-400 hover:underline" href="https://jakearchibald.github.io/svgomg/" target="_blank">SVGOMG</a>
+									<span class="ml-2">- для обробки векторної графіки (svg)</span>
+								</li>
+								<li>
+									<a class="text-blue-400 hover:underline" href="https://squoosh.app/" target="_blank">Squoosh</a>
+									<span class="ml-2">- для обробки растрової графіки (jpg, png, webp, ..)</span>
+								</li>
+								<li>
+									<a class="text-blue-400 hover:underline" href="https://picsum.photos/" target="_blank">Lorem Picsum</a>
+									<span class="ml-2">- для генерації зображень будь-яких розмірів (плейсхолдери)</span>
+								</li>
+							</ol>
 						</div>
 					</div>
 				</div>
