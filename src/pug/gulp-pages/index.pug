@@ -42,8 +42,51 @@ block content
 					include ../templates/_icon-tailwind.pug
 					img(src="./img/icons-content/sass-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true")
 
+				div(class="mt-4 text-base text-black")
+					p
+						| З метою оптимізації кінцевого результату та зручності підтримки продукту кожна HTML-сторінка містить в собі:
+					ul(class="mt-2 flex list-disc flex-col gap-2 pl-6")
+						li
+							| загальні CSS-файли - ті, що використовуються на всіх сторінках (як власні стилі, так і бібліотеки):
+							ul(class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle")
+								li
+									+code("tailwind.css")
+								li
+									+code("...")
+								li
+									+code("all-pages.css")
+						li
+							| унікальні CSS-файли - ті, що використовуються лише на цій сторінці (як власні стилі, так і бібліотеки):
+							ul(class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle")
+								li
+									+code("owl.carousel.min.css")
+								li
+									+code("owl.theme.default.min.css")
+								li
+									+code("...")
+								li
+									+code("product.css")
+						li
+							| загальні JS-файли - ті, що використовуються на всіх сторінках (як власні скрипти, так і бібліотеки):
+							ul(class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle")
+								li
+									+code("jquery.min.js")
+								li
+									+code("...")
+								li
+									+code("all-pages.js")
+						li
+							| унікальні JS-файли - ті, що використовуються лише на цій сторінці (як власні скрипти, так і бібліотеки):
+							ul(class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle")
+								li
+									+code("owl.carousel.min.js")
+								li
+									+code("...")
+								li
+									+code("product.js")
+
 				div(class="mt-8 flex flex-col gap-2")
-					+inner-title("Перелік сторінок")
+					+inner-title("Демонстраційні сторінки")
 					ul(class="mt-2 flex list-disc flex-col gap-2 pl-6")
 						li
 							+link("home.html", "Головна")
@@ -98,7 +141,7 @@ block content
 						li
 							+code("src/pug/pages/")
 							span
-								| - назва папки відповідає сторінці, має основний файл
+								| - назва теки відповідає сторінці, має основний файл
 								+code("index.pug")
 								| та секції (блоки) цієї сторінки
 								+code("_promo.pug")
@@ -106,13 +149,13 @@ block content
 						li
 							+code("src/pug/partials/")
 							span
-								| - папка для розташування глобальних міксинів. Глобальні міксини підключаються в
+								| - тека для розташування глобальних міксинів. Глобальні міксини підключаються в
 								+code("src/pug/layouts/main.pug")
 								| .
 						li
 							+code("src/pug/templates/")
 							span
-								| - папка для розміщення шаблонного коду (хлібні крихти, пагінація, ...).
+								| - тека для розміщення шаблонного коду (хлібні крихти, пагінація, ...).
 						li
 							+code("src/pug/gulp-pages/")
 							span
@@ -133,7 +176,7 @@ block content
 						li
 							+code("src/sass/pages/")
 							span
-								| - назва папки відповідає сторінці. Містить в собі стилі для секцій (блоків) відповідної сторінки.
+								| - назва теки відповідає сторінці. Містить в собі стилі для секцій (блоків) відповідної сторінки.
 						li
 							+code("src/sass/partials/")
 							span
@@ -145,7 +188,7 @@ block content
 						li
 							+code("src/sass/")
 							span
-								| - з кореня папки таск-менеджер візьме sass-файл та скомпілює css-файл з відповідною назвою.
+								| - з кореня теки таск-менеджер візьме sass-файл та скомпілює css-файл з відповідною назвою.
 
 				//- IMG
 				div(class="mt-8 flex flex-col gap-2")
@@ -167,6 +210,90 @@ block content
 							+code("src/img/icons-content/")
 							span
 								| - контентні іконки (логотипи, декоративні елементи, ..)
+
+				//- GULP-TASKS
+				div(class="mt-8 flex flex-col gap-2")
+					+inner-title("Опис gulp-задач")
+					ul(class="mt-2 flex list-decimal flex-col gap-2 pl-6")
+						li
+							span.mr-2.font-bold
+								| clean()
+							| - видалити вміст
+							+code("docs")
+						li
+							span.mr-2.font-bold
+								| copyJs()
+							| - скопіювати js-файли з
+							+code("src/js/*")
+							| в
+							+code("docs/js/")
+							| (без обробки)
+						li
+							span.mr-2.font-bold
+								| copyImg()
+							| - скопіювати зображення з
+							+code("src/img/*")
+							| в
+							+code("docs/img/")
+							| (без обробки)
+						li
+							span.mr-2.font-bold
+								| copyLibs()
+							| - скопіювати бібліотеки з
+							+code("src/libs/*")
+							| в
+							+code("docs/libs/")
+							| (без обробки)
+						li
+							span.mr-2.font-bold
+								| copyFonts()
+							| - скопіювати шрифти з
+							+code("src/fonts/*")
+							| в
+							+code("docs/fonts/")
+							| (без обробки)
+						li
+							span.mr-2.font-bold
+								| devStyles()
+							| - обробити sass-файли з
+							+code("src/sass/*")
+							| та покласти в
+							+code("docs/css")
+						li
+							span.mr-2.font-bold
+								| prodStyles()
+							| - обробити sass-файли з
+							+code("src/sass/*")
+							| та покласти в
+							+code("docs/css")
+							| з постобробкою для production
+						li
+							span.mr-2.font-bold
+								| jade()
+							| - обробити pug-файли з
+							+code("src/pug/gulp-pages/*")
+							| та покласти в
+							+code("docs/")
+						li
+							span.mr-2.font-bold
+								| jadeProd()
+							| - обробити pug-файли з
+							+code("src/pug/gulp-pages/*")
+							| та покласти в
+							+code("docs/")
+							| з постобробкою для production
+						li
+							span.mr-2.font-bold
+								| livePreview()
+							| - запустити локальний сервер
+						li
+							span.mr-2.font-bold
+								| watchFiles()
+							| - відстежувати зміну файлів
+						li
+							span.mr-2.font-bold
+								| previewReload()
+							| - перезавантажити сервер якщо файли змінились
 
 				//- FAQ
 				div(class="mt-8 flex flex-col gap-2")
@@ -226,3 +353,20 @@ block content
 								| Навіщо помаранчевий блок з посиланнями що відкривають модальні вікна?
 							dd
 								| Для бекенд-розробників, щоб завжди було очевидно що є прихованним на цій конкретній сторінці.
+
+				//- SERVICES
+				div(class="mt-8 flex flex-col gap-2")
+					+inner-title("Корисні сторонні сервіси")
+					ol(class="mt-2 flex list-disc flex-col gap-2 pl-6")
+						li
+							+link("https://jakearchibald.github.io/svgomg/", "SVGOMG")
+							span.ml-2
+								| - для обробки векторної графіки (svg)
+						li
+							+link("https://squoosh.app/", "Squoosh")
+							span.ml-2
+								| - для обробки растрової графіки (jpg, png, webp, ..)
+						li
+							+link("https://picsum.photos/", "Lorem Picsum")
+							span.ml-2
+								| - для генерації зображень будь-яких розмірів (плейсхолдери)
