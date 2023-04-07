@@ -1,54 +1,46 @@
-// npm run dev
-// npm run prod
+import gulp from "gulp";
+import { deleteAsync } from "del";
+import browserSync from "browser-sync";
+import notify from "gulp-notify";
+import plumber from "gulp-plumber";
+import pug from "gulp-pug";
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+const sass = gulpSass(dartSass);
+import sassGlob from "gulp-sass-glob";
+import autoprefixerstyles from "gulp-autoprefixer";
+import cleancss from "gulp-clean-css";
 
-const { src, dest, task, watch, series, parallel } = require("gulp");
-
-// Загальні модулі
-const del = require("del");
-const browserSync = require("browser-sync").create();
-const notify = require("gulp-notify");
-const plumber = require("gulp-plumber");
-
-// HTML
-const pug = require("gulp-pug");
-
-// CSS
-const sass = require("gulp-sass")(require("sass"));
-const sassGlob = require("gulp-sass-glob");
-const autoprefixerstyles = require("gulp-autoprefixer");
-const cleancss = require("gulp-clean-css");
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-// Default
+// Default tasks
 
 function clean() {
 	console.log("\n\t", "Cleaning docs folder (docs/) for fresh start.\n");
-	return del("./docs/");
+	return deleteAsync("./docs/");
 }
 
 function copyJs() {
-	return src("./src/js/**/*").pipe(dest("./docs/js/"));
+	return gulp.src("./src/js/**/*").pipe(gulp.dest("./docs/js/"));
 }
 
 function copyImg() {
-	return src("./src/img/**/*").pipe(dest("./docs/img/"));
+	return gulp.src("./src/img/**/*").pipe(gulp.dest("./docs/img/"));
 }
 
 function copyLibs() {
-	return src("./src/libs/**/*").pipe(dest("./docs/libs/"));
+	return gulp.src("./src/libs/**/*").pipe(gulp.dest("./docs/libs/"));
 }
 
 function copyFonts() {
-	return src("./src/fonts/**/*").pipe(dest("./docs/fonts/"));
+	return gulp.src("./src/fonts/**/*").pipe(gulp.dest("./docs/fonts/"));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-// DEVELOPMENT
+// DEVELOPMENT tasks
 
 function devStyles() {
-	return src("./src/sass/*.sass")
+	return gulp
+		.src("./src/sass/*.sass")
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -62,12 +54,13 @@ function devStyles() {
 		)
 		.pipe(sassGlob())
 		.pipe(sass())
-		.pipe(dest("./docs/css/"))
+		.pipe(gulp.dest("./docs/css/"))
 		.pipe(browserSync.stream());
 }
 
 function jade() {
-	return src("./src/pug/gulp-pages/*.pug")
+	return gulp
+		.src("./src/pug/gulp-pages/*.pug")
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -80,7 +73,7 @@ function jade() {
 			})
 		)
 		.pipe(pug())
-		.pipe(dest("./docs/"));
+		.pipe(gulp.dest("./docs/"));
 }
 
 function livePreview(done) {
@@ -94,11 +87,12 @@ function livePreview(done) {
 }
 
 function watchFiles() {
-	watch("./src/img/**/*", series(copyImg, previewReload));
-	watch("./src/js/**/*", series(copyJs, previewReload));
-	watch("./src/libs/**/*", series(copyLibs, previewReload));
-	watch("./src/sass/**/*.sass", devStyles);
-	watch("./src/**/*.pug", series(jade, previewReload));
+	gulp.watch("./src/img/**/*", gulp.series(copyImg, previewReload));
+	gulp.watch("./src/js/**/*", gulp.series(copyJs, previewReload));
+	gulp.watch("./src/libs/**/*", gulp.series(copyLibs, previewReload));
+	gulp.watch("./src/sass/**/*.sass", devStyles);
+	gulp.watch("./src/sass/tailwind/*.scss", previewReload);
+	gulp.watch("./src/**/*.pug", gulp.series(jade, previewReload));
 
 	console.log("\n\t", "Watching for Changes..\n");
 }
@@ -109,12 +103,11 @@ function previewReload(done) {
 	done();
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
-
-// PRODUCTION
+// PRODUCTION tasks
 
 function prodStyles() {
-	return src("./src/sass/*.sass")
+	return gulp
+		.src("./src/sass/*.sass")
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -134,11 +127,12 @@ function prodStyles() {
 			})
 		)
 		.pipe(cleancss({ level: { 1: { specialComments: 0 } } }))
-		.pipe(dest("./docs/css/"));
+		.pipe(gulp.dest("./docs/css/"));
 }
 
 function jadeProd() {
-	return src("./src/pug/gulp-pages/*.pug")
+	return gulp
+		.src("./src/pug/gulp-pages/*.pug")
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -151,26 +145,24 @@ function jadeProd() {
 			})
 		)
 		.pipe(pug({ pretty: true }))
-		.pipe(dest("./docs/"));
+		.pipe(gulp.dest("./docs/"));
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
-
-exports.default = series(
+export const dev = gulp.series(
 	copyJs,
 	copyImg,
 	copyLibs,
 	copyFonts,
-	parallel(devStyles, jade), //
+	gulp.parallel(devStyles, jade), //
 	livePreview,
 	watchFiles
 );
 
-exports.prod = series(
+export const prod = gulp.series(
 	clean,
 	copyJs,
 	copyImg,
 	copyFonts,
 	copyLibs,
-	parallel(jadeProd, prodStyles) //
+	gulp.parallel(jadeProd, prodStyles) //
 );
