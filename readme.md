@@ -6,6 +6,7 @@ Gulp-збірка для верстки з використанням шабло
 
 ```
 ├── .gitignore                         #
+├── .editorconfig                      #
 ├── .prettierrc                        # налаштування Prettier (форматування)
 ├── gulpfile.js                        # налаштування таск-менеджеру gulp
 ├── package.json                       # залежності та npm-скрипти
