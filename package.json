@@ -15,7 +15,8 @@
 	},
 	"devDependencies": {
 		"@prettier/plugin-pug": "^3.0.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.10",
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"del": "^7.1.0",
@@ -32,6 +33,6 @@
 		"prettier": "^3.1.1",
 		"prettier-plugin-tailwindcss": "^0.5.9",
 		"sass": "^1.69.5",
-		"tailwindcss": "^3.3.7"
+		"tailwindcss": "^3.4.0"
 	}
 }

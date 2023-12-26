@@ -9,9 +9,8 @@
 	"pugCommentPreserveSpaces": "keep-all",
 	"pugSortAttributes": "as-is",
 	"pugWrapAttributesThreshold": 6,
-	"pugClassNotation": "as-is",
+	"pugClassNotation": "attribute",
 	"pugIdNotation": "literal",
-	"pugClassLocation": "after-attributes",
 	"pugPreserveAttributeBrackets": false,
 	"plugins": ["@prettier/plugin-pug", "prettier-plugin-tailwindcss"],
 	"pluginSearchDirs": false
