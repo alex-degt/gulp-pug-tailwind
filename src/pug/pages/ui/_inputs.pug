@@ -1,0 +1,72 @@
+div(class="flex flex-col gap-5 px-5 py-10")
+	h2(class="text-2xl font-bold text-black")
+		| Inputs
+	div(class="grid grid-cols-4 gap-4")
+		//- prettier-ignore
+		+input({
+			wrapperClass: "",
+			labelClass: "",
+			value: "",
+			id: "",
+			name: "",
+			type: "text",
+			placeholder: "Your name",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+input({
+			wrapperClass: "",
+			labelClass: "",
+			value: "",
+			id: "",
+			name: "",
+			type: "text",
+			placeholder: "Your name",
+			noticeMessage: "Full name"
+		})
+		//- prettier-ignore
+		+input({
+			wrapperClass: "disabled",
+			labelClass: "",
+			value: "",
+			id: "",
+			name: "",
+			type: "text",
+			placeholder: "Your name",
+			noticeMessage: "Full name"
+		})
+		//- prettier-ignore
+		+input({
+			wrapperClass: "i-error",
+			labelClass: "",
+			value: "",
+			id: "",
+			name: "",
+			type: "text",
+			placeholder: "Your name",
+			noticeMessage: ""
+		})
+	div(class="grid grid-cols-4 gap-4")
+		//- prettier-ignore
+		+input({
+			wrapperClass: "",
+			labelClass: "",
+			value: "",
+			id: "",
+			name: "",
+			type: "tel",
+			placeholder: "Phone number",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+input({
+			wrapperClass: "with-country-select",
+			labelClass: "",
+			value: "",
+			id: "intlTel",
+			name: "",
+			type: "",
+			placeholder: "Phone number",
+			noticeMessage: ""
+		})
+		include ../../partials/form/_input-password.pug

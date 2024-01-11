@@ -1,14 +1,20 @@
-// .custom-scroll
-// 	scrollbar-color: var(--primary-500) transparent
-// 	scrollbar-width: thin
-// 	&::-webkit-scrollbar
-// 		width: 3px
-// 		height: 4px
-// 	&::-webkit-scrollbar-track
-// 		border-radius: 20px
-// 	&::-webkit-scrollbar-thumb
-// 		border-radius: 20px
-// 		background-color: var(--primary-500)
+.custom-scroll
+	--scrollbar-thumb-color: red
+	--scrollbar-bg: transparent
+	--scrollbar-radius: 8px
+	--scrollbar-width: 8px
+
+.custom-scroll
+	scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-bg)
+	scrollbar-width: thin
+	&::-webkit-scrollbar
+		width: var(--scrollbar-width)
+		height: var(--scrollbar-width)
+	&::-webkit-scrollbar-track
+		background-color: var(--scrollbar-bg)
+	&::-webkit-scrollbar-thumb
+		border-radius: var(--scrollbar-radius)
+		background-color: var(--scrollbar-thumb-color)
 
 .hidden-scroll
 	scrollbar-color: transparent transparent

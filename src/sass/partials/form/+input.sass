@@ -1,0 +1,153 @@
+.i-input
+	// Wrapper
+	--input-wrapper-y-gap: 6px
+	// Input - [default] state
+	--input-bg: var(--white)
+	--input-border-radius: 6px
+	--input-border-width: 1px
+	--input-border-color: var(--slate-400)
+	--input-height: 48px
+	--input-paddings-x: 16px
+	--input-font-size: 16px
+	--input-font-weight: 400
+	--input-text-color: var(--black)
+	--input-placeholder-color: var(--slate-400)
+	// Input - [hover] state
+	--input-border-hover-color: var(--sky-500)
+	// Input - [focus] state
+	--input-focus-outline-width: 4px
+	--input-focus-outline-style: solid
+	--input-focus-outline-color: var(--sky-200)
+	--input-focus-outline-offset: 0px
+	--input-focus-border-color: var(--sky-600)
+	// Input - [error] state
+	--input-error-border-color: var(--red-400)
+	--input-error-outline-color: var(--red-200)
+	--input-error-font-size: 16px
+	--input-error-font-weight: 400
+	--input-error-text-color: var(--red-500)
+	// Input - [disabled] state
+	--input-disabled-bg: var(--slate-100)
+	// Input - [all] states - NOTICE
+	--input-notice-font-size: 16px
+	--input-notice-font-weight: 400
+	--input-notice-text-color: var(--slate-400)
+	// Input - TEXTAREA
+	--textarea-height: 140px
+
+input
+	font-feature-settings: "lnum"
+
+.i-input
+	display: flex
+	flex-direction: column
+
+	gap: var(--input-wrapper-y-gap)
+
+.i-input__inner
+	position: relative
+	display: flex
+	flex-direction: column-reverse
+	width: 100%
+
+.i-input__field
+	padding-right: var(--input-paddings-x)
+	padding-left: var(--input-paddings-x)
+	width: 100%
+	height: var(--input-height)
+	outline: none
+	border: var(--input-border-width) solid var(--input-border-color)
+	border-radius: var(--input-border-radius)
+	background-color: var(--input-bg)
+	color: var(--input-text-color)
+	font-weight: var(--input-font-weight)
+	font-size: var(--input-font-size)
+	line-height: 1.2
+	&::placeholder
+		color: var(--input-placeholder-color)
+
+textarea.i-input__field
+	padding: var(--input-paddings-x)
+	width: 100%
+	height: var(--textarea-height)
+	resize: none
+
+.i-input__field
+	&:hover
+		border-color: var(--input-border-hover-color)
+	&:focus
+		outline-width: var(--input-focus-outline-width)
+		outline-style: var(--input-focus-outline-style)
+		outline-color: var(--input-focus-outline-color)
+		outline-offset: var(--input-focus-outline-offset)
+		border-color: var(--input-focus-border-color)
+
+// Error state
+.i-input
+	.i-input-error
+		display: none
+
+.i-input.i-error
+	.i-input-error
+		display: block
+	.i-input-notice
+		display: none
+	.i-input__field
+		border-color: var(--input-error-border-color)
+		&:focus
+			outline-color: var(--input-error-outline-color)
+
+// Error message styles
+.i-input-error
+	padding-left: var(--input-paddings-x)
+	color: var(--input-error-text-color)
+	font-weight: var(--input-error-font-weight)
+	font-size: var(--input-error-font-size)
+	line-height: 1.2
+	&:empty
+		display: none
+
+// Notice message styles
+.i-input
+	.i-input-notice
+		padding-left: var(--input-paddings-x)
+		color: var(--input-notice-text-color)
+		font-weight: var(--input-notice-font-weight)
+		font-size: var(--input-notice-font-size)
+		line-height: 1.2
+		&:empty
+			display: none
+
+// Disabled state
+.i-input.disabled
+	outline: none!important
+	opacity: 0.6 !important
+	filter: slatescale(1) !important
+	cursor: default!important
+	pointer-events: none !important
+
+	user-select: none !important
+	.select2-selection
+		background-color: var(--input-disabled-bg) !important
+	.i-input__field
+		outline: none!important
+		background-color: var(--input-disabled-bg) !important
+		&:hover,
+		&:focus,
+		&:active,
+		&:read-only:focus
+			outline: none!important
+
+// Type password
+.i-input--password
+	.i-input__field
+		padding-right: 48px
+	.password-control
+		position: absolute
+		top: 50%
+		right: 16px
+		color: var(--input-placeholder-color)
+		transition: 0.3s
+		transform: translateY(-50%)
+		&:hover
+			color: var(--input-border-hover-color)

@@ -1,0 +1,31 @@
+#modal-login(class="modal modal--example !max-w-[400px]")
+	div(class="modal__wrapper")
+		div(class="mb-8 flex items-center justify-between gap-4")
+			div(class="text-xl")
+				| Login
+			button(type="button" class="js-closeModal flex flex-shrink-0 items-center justify-center transition duration-200 hover:text-red-500")
+				svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24")
+					path(stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12")
+
+		div(class="modal__content")
+			div(class="flex flex-col gap-4")
+				//- prettier-ignore
+				+input({
+					wrapperClass: "",
+					labelClass: "",
+					value: "",
+					id: "",
+					name: "",
+					type: "tel",
+					placeholder: "Phone number",
+					noticeMessage: ""
+				})
+
+				include ../../partials/form/_input-password.pug
+
+				button(type="button" class="s-button s-button-with-spinner mt-4")
+					span(class="s-button-with-spinner__text")
+						| Login
+					span(class="s-button-with-spinner__loader")
+						svg(xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24")
+							path(stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 3.816a9 9 0 1 1-12.543 10.1")

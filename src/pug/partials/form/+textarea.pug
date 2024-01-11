@@ -1,0 +1,20 @@
+mixin textarea(o)
+	div(class="js-input i-input " + o.wrapperClass)
+		label(class="i-input__inner " + o.labelClass)
+			textarea(class="i-input__field" id=o.id name=o.name cols=o.cols rows=o.rows placeholder=o.placeholder)
+		div(class="i-input-error")
+			| Error message
+		div(class="i-input-notice")
+			| #{ o.noticeMessage }
+
+//- prettier-ignore
+//- +textarea({
+//- 	wrapperClass: "",
+//- 	labelClass: "",
+//- 	id: "",
+//- 	name: "",
+//- 	cols: "",
+//- 	rows: "",
+//- 	placeholder: "",
+//- 	noticeMessage: ""
+//- })

@@ -1,0 +1,42 @@
+mixin input-select(o)
+	div(id=o.wrapperId class="js-input i-select-wrapper i-input " + o.wrapperClass)
+		select(class="i-select " + o.class id=o.id name=o.name data-placeholder=o.placeholder)
+			if (o.placeholder !== "")
+				option
+			each item in o.items
+				option(value=item.value)
+					| #{ item.text }
+		span(class="i-input-error")
+			| Error message
+		span(class="i-input-notice")
+			| #{ o.notice }
+
+	script.
+		document.addEventListener("DOMContentLoaded", () => {
+			$("#!{o.id}").select2({
+				multiple: false,
+				minimumResultsForSearch: Infinity,
+				dropdownParent: "#!{o.wrapperId}",
+			});
+		});
+
+//- prettier-ignore
+//- +input-select({
+//- 	wrapperClass: "error",
+//- 	class: "",
+//- 	wrapperId: "wrapper-select",
+//- 	id: "select",
+//- 	name: "select",
+//- 	placeholder: "Сортувати по",
+//- 	notice: "Текст підказки для користувача",
+//- 	items: [
+//- 		{
+//- 			value: 1,
+//- 			text: "A-Z"
+//- 		},
+//- 		{
+//- 			value: 2,
+//- 			text: "Z-A"
+//- 		},
+//- 	]
+//- })

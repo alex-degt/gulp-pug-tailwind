@@ -4,35 +4,13 @@ block variables
 	- const title = "Головна";
 
 block css
-	//- link(rel="stylesheet" href="libs/owl-carousel/assets/owl.carousel.min.css")
-	//- link(rel="stylesheet" href="libs/owl-carousel/assets/owl.theme.default.min.css")
 	link(rel="stylesheet" href="css/all-pages.css" + version)
 	link(rel="stylesheet" href="css/home.css" + version)
 
 block js
-	//- script(src="libs/owl-carousel/owl.carousel.min.js")
 	script(src="js/home.js")
 
 block content
 	include _promo.pug
 
 block modals
-	include _modal-home.pug
-
-	.developer-window
-		.developer-window__row
-			.developer-window__title
-				| Модальні вікна
-			button(type="button").developer-window__close
-				| X
-		.developer-window__wrapper
-			a(href="#modal-global" rel="modal:open")
-				| Модальне вікно - глобальне
-			a(href="#modal-home" rel="modal:open")
-				| Модальне вікно - головна
-		script.
-			document.addEventListener("DOMContentLoaded", () => {
-				$(".developer-window__close").click(function () {
-					$(this).parents(".developer-window").remove();
-				});
-			});

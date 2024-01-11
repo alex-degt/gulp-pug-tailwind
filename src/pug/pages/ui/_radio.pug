@@ -1,0 +1,40 @@
+div(class="flex flex-col gap-5 px-5 py-10")
+	h2(class="text-2xl font-bold text-black")
+		| Radio buttons
+	div(class="grid grid-cols-4 gap-4")
+		//- prettier-ignore
+		+radio({
+			wrapperClass: "",
+			name: "test-radio",
+			value: "1",
+			isChecked: false,
+			content: "Send me a copy",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+radio({
+			wrapperClass: "",
+			name: "test-radio-2",
+			value: "2",
+			isChecked: true,
+			content: "Send me a copy",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+radio({
+			wrapperClass: "disabled",
+			name: "test-radio-3",
+			value: "2",
+			isChecked: true,
+			content: "Send me a copy",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+radio({
+			wrapperClass: "i-error",
+			name: "test-radio-4",
+			value: "2",
+			isChecked: false,
+			content: "Send me a copy",
+			noticeMessage: ""
+		})
