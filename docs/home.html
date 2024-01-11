@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 	<head>
 		<meta charset="UTF-8" />
@@ -32,36 +32,7 @@
 		</main>
 		<footer class="footer" id="footer"><span>Футер</span></footer>
 		<!-- Modals - всі сторінки-->
-		<div class="modal modal--example" id="modal-global">
-			<div class="modal__wrapper">
-				<div class="modal__head mb-2">Модальне вікно - глобальне</div>
-				<div class="modal__content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque porro dolorum ducimus laborum sequi, vero odio velit earum. Ipsum consequatur molestiae dicta praesentium porro quo enim architecto, in omnis error?</div>
-			</div>
-		</div>
 		<!-- Modals - конкретна сторінка-->
-		<div class="modal modal--example" id="modal-home">
-			<div class="modal__wrapper">
-				<div class="modal__head mb-2">Модальне вікно - головна</div>
-				<div class="modal__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nemo esse reiciendis unde molestias, vitae explicabo delectus laborum corrupti sit beatae praesentium libero doloremque. Pariatur aut, quo nulla, soluta quos odio id voluptatum, quis rem facilis reprehenderit error fugiat nisi.</div>
-			</div>
-		</div>
-		<div class="developer-window">
-			<div class="developer-window__row">
-				<div class="developer-window__title">Модальні вікна</div>
-				<button class="developer-window__close" type="button">X</button>
-			</div>
-			<div class="developer-window__wrapper">
-				<a href="#modal-global" rel="modal:open">Модальне вікно - глобальне</a>
-				<a href="#modal-home" rel="modal:open">Модальне вікно - головна</a>
-			</div>
-			<script>
-				document.addEventListener("DOMContentLoaded", () => {
-					$(".developer-window__close").click(function () {
-						$(this).parents(".developer-window").remove();
-					});
-				});
-			</script>
-		</div>
 		<!-- JS - всі сторінки-->
 		<script src="libs/jquery/jquery-3.6.3.min.js"></script>
 		<script src="libs/jquery-ui/jquery-ui.min.js"></script>

@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="img/favicon/site.webmanifest" />
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" />
+		<!-- CSS - всі сторінки-->
+		<link rel="stylesheet" href="css/tailwind.css?v=1" />
+		<link rel="stylesheet" href="libs/jquery-modal/jquery.modal.min.css" />
+		<!-- CSS - тільки для цієї сторінки-->
+		<link rel="stylesheet" href="libs/select/select2.min.css" />
+		<link rel="stylesheet" href="libs/intl-tel/css/intlTelInput.min.css" />
+		<link rel="stylesheet" href="css/all-pages.css?v=1" />
+		<title>UI</title>
+	</head>
+	<body class="body">
+		<header class="header" id="header"><span>Хедер</span></header>
+		<main class="main" id="main">
+			<style>
+				header,
+				footer {
+					display: none !important;
+				}
+			</style>
+			<section class="my-10">
+				<div class="container flex flex-col">
+					<h1 class="mb-10 text-center text-4xl font-bold text-black">UI</h1>
+					<div class="flex flex-col bg-white">
+						<div class="flex flex-col gap-5 px-5 py-10">
+							<h2 class="text-2xl font-bold text-black">Buttons</h2>
+							<div class="grid grid-cols-4 gap-4">
+								<button class="s-button s-button-with-spinner" type="button">
+									<span class="s-button-with-spinner__text">Load data</span>
+									<span class="s-button-with-spinner__loader">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+											<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 3.816a9 9 0 1 1-12.543 10.1"></path>
+										</svg>
+									</span>
+								</button>
+								<button class="s-button s-button-with-spinner is-loading" type="button">
+									<span class="s-button-with-spinner__text">Load data</span>
+									<span class="s-button-with-spinner__loader">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+											<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 3.816a9 9 0 1 1-12.543 10.1"></path>
+										</svg>
+									</span>
+								</button>
+								<button class="s-button s-button-with-spinner disabled" type="button">
+									<span class="s-button-with-spinner__text">Load data</span>
+									<span class="s-button-with-spinner__loader">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+											<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 3.816a9 9 0 1 1-12.543 10.1"></path>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+						<div class="flex flex-col gap-5 px-5 py-10">
+							<h2 class="text-2xl font-bold text-black">Inputs</h2>
+							<div class="grid grid-cols-4 gap-4">
+								<div class="js-input i-input">
+									<label class="i-input__inner">
+										<input class="i-input__field" value="" id="" name="" type="text" placeholder="Your name" />
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-input">
+									<label class="i-input__inner">
+										<input class="i-input__field" value="" id="" name="" type="text" placeholder="Your name" />
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice">Full name</div>
+								</div>
+								<div class="js-input i-input disabled">
+									<label class="i-input__inner">
+										<input class="i-input__field" value="" id="" name="" type="text" placeholder="Your name" />
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice">Full name</div>
+								</div>
+								<div class="js-input i-input i-error">
+									<label class="i-input__inner">
+										<input class="i-input__field" value="" id="" name="" type="text" placeholder="Your name" />
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+							</div>
+							<div class="grid grid-cols-4 gap-4">
+								<div class="js-input i-input">
+									<label class="i-input__inner">
+										<input class="i-input__field" value="" id="" name="" type="tel" placeholder="Phone number" />
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-input with-country-select">
+									<label class="i-input__inner">
+										<input class="i-input__field" value="" id="intlTel" name="" type="" placeholder="Phone number" />
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-input i-input--password">
+									<label class="i-input__inner">
+										<input class="i-input__field" id="" name="password" autocomplete="off" required="required" type="password" placeholder="Password" />
+										<a class="password-control" href="javascript:void(0);" title="Show password">
+											<svg class="password-control__off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 32 32">
+												<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4l24 24M14.112 14.116a2.667 2.667 0 103.77 3.773"></path>
+												<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.484 7.153A12.622 12.622 0 0116 6.667c5.333 0 9.777 3.11 13.333 9.333-1.037 1.815-2.15 3.366-3.337 4.65m-2.854 2.482C20.968 24.6 18.59 25.333 16 25.333c-5.334 0-9.777-3.11-13.334-9.333 1.826-3.193 3.885-5.566 6.176-7.121"></path>
+											</svg>
+											<svg class="password-control__on" xmlns="http://www.w3.org/2000/svg" style="display: none" width="24" height="24" fill="none" viewBox="0 0 32 32">
+												<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18.667a2.667 2.667 0 100-5.334 2.667 2.667 0 000 5.334z"></path>
+												<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M29.333 16c-3.556 6.223-8 9.333-13.333 9.333-5.334 0-9.777-3.11-13.334-9.333 3.557-6.223 8-9.333 13.334-9.333 5.333 0 9.777 3.11 13.333 9.333z"></path>
+											</svg>
+										</a>
+									</label>
+									<div class="i-input-error"></div>
+									<div class="i-input-notice"></div>
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col gap-5 px-5 py-10">
+							<h2 class="text-2xl font-bold text-black">Selects</h2>
+							<div class="grid grid-cols-3 gap-4">
+								<div class="js-input i-select-wrapper i-input" id="wrapper-select-sort">
+									<select class="i-select" id="select-sort" name="select-sort" data-placeholder="Sorting">
+										<option></option>
+										<option value="1">A-Z</option>
+										<option value="2">Z-A</option>
+									</select>
+									<span class="i-input-error">Error message</span>
+									<span class="i-input-notice"></span>
+								</div>
+								<script>
+									document.addEventListener("DOMContentLoaded", () => {
+										$("#select-sort").select2({
+											multiple: false,
+											minimumResultsForSearch: Infinity,
+											dropdownParent: "#wrapper-select-sort",
+										});
+									});
+								</script>
+								<div class="js-input i-select-wrapper i-input" id="wrapper-select-sort-2">
+									<select class="i-select" id="select-sort-2" name="select-sort-2" data-placeholder="">
+										<option value="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus adipisci velit eaque pariatur officiis animi quod corporis commodi veniam porro?</option>
+										<option value="1">A-Z</option>
+										<option value="2">Z-A</option>
+									</select>
+									<span class="i-input-error">Error message</span>
+									<span class="i-input-notice">Select sorting</span>
+								</div>
+								<script>
+									document.addEventListener("DOMContentLoaded", () => {
+										$("#select-sort-2").select2({
+											multiple: false,
+											minimumResultsForSearch: Infinity,
+											dropdownParent: "#wrapper-select-sort-2",
+										});
+									});
+								</script>
+								<div class="js-input i-select-wrapper i-input disabled" id="wrapper-select-sort-3">
+									<select class="i-select" id="select-sort-3" name="select-sort-3" data-placeholder="Sorting">
+										<option></option>
+										<option value="1">A-Z</option>
+										<option value="2">Z-A</option>
+									</select>
+									<span class="i-input-error">Error message</span>
+									<span class="i-input-notice"></span>
+								</div>
+								<script>
+									document.addEventListener("DOMContentLoaded", () => {
+										$("#select-sort-3").select2({
+											multiple: false,
+											minimumResultsForSearch: Infinity,
+											dropdownParent: "#wrapper-select-sort-3",
+										});
+									});
+								</script>
+							</div>
+						</div>
+						<div class="flex flex-col gap-5 px-5 py-10">
+							<h2 class="text-2xl font-bold text-black">Textareas</h2>
+							<div class="grid grid-cols-4 gap-4">
+								<div class="js-input i-input">
+									<label class="i-input__inner">
+										<textarea class="i-input__field" id="" name="" cols="" rows="" placeholder="Your message"></textarea>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-input">
+									<label class="i-input__inner">
+										<textarea class="i-input__field" id="" name="" cols="" rows="" placeholder="Your message"></textarea>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice">Enter a message with all details</div>
+								</div>
+								<div class="js-input i-input disabled">
+									<label class="i-input__inner">
+										<textarea class="i-input__field" id="" name="" cols="" rows="" placeholder="Your message"></textarea>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice">Enter a message with all details</div>
+								</div>
+								<div class="js-input i-input i-error">
+									<label class="i-input__inner">
+										<textarea class="i-input__field" id="" name="" cols="" rows="" placeholder="Your message"></textarea>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice">Enter a message with all details</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col gap-5 px-5 py-10">
+							<h2 class="text-2xl font-bold text-black">Checkboxes</h2>
+							<div class="grid grid-cols-4 gap-4">
+								<div class="js-input i-checkbox">
+									<label class="i-checkbox__inner" tabindex="0">
+										<input class="visually-hidden" type="checkbox" />
+										<span class="i-checkbox__fake"></span>
+										<span class="i-checkbox__content">I accept the privacy policy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-checkbox">
+									<label class="i-checkbox__inner" tabindex="0">
+										<input class="visually-hidden" type="checkbox" checked="checked" />
+										<span class="i-checkbox__fake"></span>
+										<span class="i-checkbox__content">I accept the privacy policy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-checkbox disabled">
+									<label class="i-checkbox__inner" tabindex="0">
+										<input class="visually-hidden" type="checkbox" checked="checked" />
+										<span class="i-checkbox__fake"></span>
+										<span class="i-checkbox__content">I accept the privacy policy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-checkbox i-error">
+									<label class="i-checkbox__inner" tabindex="0">
+										<input class="visually-hidden" type="checkbox" />
+										<span class="i-checkbox__fake"></span>
+										<span class="i-checkbox__content">I accept the privacy policy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice">You must accept our rules</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col gap-5 px-5 py-10">
+							<h2 class="text-2xl font-bold text-black">Radio buttons</h2>
+							<div class="grid grid-cols-4 gap-4">
+								<div class="js-input i-radio">
+									<label class="i-radio__inner" tabindex="0">
+										<input class="visually-hidden" type="radio" name="test-radio" value="1" />
+										<span class="i-radio__fake"></span>
+										<span class="i-radio__content">Send me a copy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-radio">
+									<label class="i-radio__inner" tabindex="0">
+										<input class="visually-hidden" type="radio" checked="checked" name="test-radio-2" value="2" />
+										<span class="i-radio__fake"></span>
+										<span class="i-radio__content">Send me a copy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-radio disabled">
+									<label class="i-radio__inner" tabindex="0">
+										<input class="visually-hidden" type="radio" checked="checked" name="test-radio-3" value="2" />
+										<span class="i-radio__fake"></span>
+										<span class="i-radio__content">Send me a copy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+								<div class="js-input i-radio i-error">
+									<label class="i-radio__inner" tabindex="0">
+										<input class="visually-hidden" type="radio" name="test-radio-4" value="2" />
+										<span class="i-radio__fake"></span>
+										<span class="i-radio__content">Send me a copy</span>
+									</label>
+									<div class="i-input-error">Error message</div>
+									<div class="i-input-notice"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer" id="footer"><span>Футер</span></footer>
+		<!-- Modals - всі сторінки-->
+		<!-- Modals - конкретна сторінка-->
+		<div class="modal modal--example !max-w-[400px]" id="modal-login">
+			<div class="modal__wrapper">
+				<div class="mb-8 flex items-center justify-between gap-4">
+					<div class="text-xl">Login</div>
+					<button class="js-closeModal flex flex-shrink-0 items-center justify-center transition duration-200 hover:text-red-500" type="button">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+				</div>
+				<div class="modal__content">
+					<div class="flex flex-col gap-4">
+						<div class="js-input i-input">
+							<label class="i-input__inner">
+								<input class="i-input__field" value="" id="" name="" type="tel" placeholder="Phone number" />
+							</label>
+							<div class="i-input-error">Error message</div>
+							<div class="i-input-notice"></div>
+						</div>
+						<div class="js-input i-input i-input--password">
+							<label class="i-input__inner">
+								<input class="i-input__field" id="" name="password" autocomplete="off" required="required" type="password" placeholder="Password" />
+								<a class="password-control" href="javascript:void(0);" title="Show password">
+									<svg class="password-control__off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 32 32">
+										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4l24 24M14.112 14.116a2.667 2.667 0 103.77 3.773"></path>
+										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.484 7.153A12.622 12.622 0 0116 6.667c5.333 0 9.777 3.11 13.333 9.333-1.037 1.815-2.15 3.366-3.337 4.65m-2.854 2.482C20.968 24.6 18.59 25.333 16 25.333c-5.334 0-9.777-3.11-13.334-9.333 1.826-3.193 3.885-5.566 6.176-7.121"></path>
+									</svg>
+									<svg class="password-control__on" xmlns="http://www.w3.org/2000/svg" style="display: none" width="24" height="24" fill="none" viewBox="0 0 32 32">
+										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18.667a2.667 2.667 0 100-5.334 2.667 2.667 0 000 5.334z"></path>
+										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M29.333 16c-3.556 6.223-8 9.333-13.333 9.333-5.334 0-9.777-3.11-13.334-9.333 3.557-6.223 8-9.333 13.334-9.333 5.333 0 9.777 3.11 13.333 9.333z"></path>
+									</svg>
+								</a>
+							</label>
+							<div class="i-input-error"></div>
+							<div class="i-input-notice"></div>
+						</div>
+						<button class="s-button s-button-with-spinner mt-4" type="button">
+							<span class="s-button-with-spinner__text">Login</span>
+							<span class="s-button-with-spinner__loader">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 3.816a9 9 0 1 1-12.543 10.1"></path>
+								</svg>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="developer-window">
+			<div class="developer-window__row">
+				<div class="developer-window__title">Modals</div>
+				<button class="developer-window__close" type="button">X</button>
+			</div>
+			<div class="developer-window__wrapper">
+				<button class="js-openModal" type="button" data-modal="#modal-login">Modal - Login</button>
+			</div>
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					$(".developer-window__close").click(function () {
+						$(this).parents(".developer-window").remove();
+					});
+				});
+			</script>
+		</div>
+		<!-- JS - всі сторінки-->
+		<script src="libs/jquery/jquery-3.6.3.min.js"></script>
+		<script src="libs/jquery-ui/jquery-ui.min.js"></script>
+		<script src="libs/jquery-modal/jquery.modal.min.js"></script>
+		<!-- JS - тільки для цієї сторінки-->
+		<script src="libs/select/select2.full.min.js"></script>
+		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<script src="libs/intl-tel/js/intlTelInput-jquery.min.js"></script>
+		<script src="js/all-pages.js"></script>
+	</body>
+</html>

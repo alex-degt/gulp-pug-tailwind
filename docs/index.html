@@ -1,401 +1,487 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
-		<link rel="manifest" href="img/favicon/site.webmanifest" />
-		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-		<meta name="msapplication-TileColor" content="#ffffff" />
-		<meta name="theme-color" content="#ffffff" />
-		<!-- CSS - всі сторінки-->
-		<link rel="stylesheet" href="css/tailwind.css?v=1" />
-		<link rel="stylesheet" href="libs/jquery-modal/jquery.modal.min.css" />
-		<!-- CSS - тільки для цієї сторінки-->
-		<link rel="stylesheet" href="css/all-pages.css" />
-		<title>Технічна сторінка</title>
-	</head>
-	<body class="body">
-		<header class="header" id="header"><span>Хедер</span></header>
-		<main class="main" id="main">
-			<style>
-				.header,
-				.footer {
-					display: none;
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon" />
+		<title>Project - Project Name</title>
+		<style>
+			.card {
+				box-shadow:
+					20px 20px 60px #bebebe,
+					-20px -20px 60px #fff;
+				grid-column-start: 1;
+				grid-column-end: 4;
+				max-width: 450px;
+				justify-self: center;
+			}
+		</style>
+		<style>
+			/* ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com */
+			*,
+			::after,
+			::before {
+				box-sizing: border-box;
+				border-width: 0;
+				border-style: solid;
+				border-color: #e5e7eb;
+			}
+			::after,
+			::before {
+				--tw-content: "";
+			}
+			html {
+				line-height: 1.5;
+				-webkit-text-size-adjust: 100%;
+				-moz-tab-size: 4;
+				tab-size: 4;
+				font-family:
+					ui-sans-serif,
+					system-ui,
+					-apple-system,
+					BlinkMacSystemFont,
+					"Segoe UI",
+					Roboto,
+					"Helvetica Neue",
+					Arial,
+					"Noto Sans",
+					sans-serif,
+					"Apple Color Emoji",
+					"Segoe UI Emoji",
+					"Segoe UI Symbol",
+					"Noto Color Emoji";
+				font-feature-settings: normal;
+				font-variation-settings: normal;
+			}
+			body {
+				margin: 0;
+				line-height: inherit;
+			}
+			hr {
+				height: 0;
+				color: inherit;
+				border-top-width: 1px;
+			}
+			abbr:where([title]) {
+				-webkit-text-decoration: underline dotted;
+				text-decoration: underline dotted;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: inherit;
+				font-weight: inherit;
+			}
+			a {
+				color: inherit;
+				text-decoration: inherit;
+			}
+			b,
+			strong {
+				font-weight: bolder;
+			}
+			code,
+			kbd,
+			pre,
+			samp {
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+				font-size: 1em;
+			}
+			small {
+				font-size: 80%;
+			}
+			sub,
+			sup {
+				font-size: 75%;
+				line-height: 0;
+				position: relative;
+				vertical-align: baseline;
+			}
+			sub {
+				bottom: -0.25em;
+			}
+			sup {
+				top: -0.5em;
+			}
+			table {
+				text-indent: 0;
+				border-color: inherit;
+				border-collapse: collapse;
+			}
+			button,
+			input,
+			optgroup,
+			select,
+			textarea {
+				font-family: inherit;
+				font-feature-settings: inherit;
+				font-variation-settings: inherit;
+				font-size: 100%;
+				font-weight: inherit;
+				line-height: inherit;
+				color: inherit;
+				margin: 0;
+				padding: 0;
+			}
+			button,
+			select {
+				text-transform: none;
+			}
+			[type="button"],
+			[type="reset"],
+			[type="submit"],
+			button {
+				-webkit-appearance: button;
+				background-color: transparent;
+				background-image: none;
+			}
+			:-moz-focusring {
+				outline: auto;
+			}
+			:-moz-ui-invalid {
+				box-shadow: none;
+			}
+			progress {
+				vertical-align: baseline;
+			}
+			::-webkit-inner-spin-button,
+			::-webkit-outer-spin-button {
+				height: auto;
+			}
+			[type="search"] {
+				-webkit-appearance: textfield;
+				outline-offset: -2px;
+			}
+			::-webkit-search-decoration {
+				-webkit-appearance: none;
+			}
+			::-webkit-file-upload-button {
+				-webkit-appearance: button;
+				font: inherit;
+			}
+			summary {
+				display: list-item;
+			}
+			blockquote,
+			dd,
+			dl,
+			figure,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			hr,
+			p,
+			pre {
+				margin: 0;
+			}
+			fieldset {
+				margin: 0;
+				padding: 0;
+			}
+			legend {
+				padding: 0;
+			}
+			menu,
+			ol,
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			dialog {
+				padding: 0;
+			}
+			textarea {
+				resize: vertical;
+			}
+			input::placeholder,
+			textarea::placeholder {
+				opacity: 1;
+				color: #9ca3af;
+			}
+			[role="button"],
+			button {
+				cursor: pointer;
+			}
+			:disabled {
+				cursor: default;
+			}
+			audio,
+			canvas,
+			embed,
+			iframe,
+			img,
+			object,
+			svg,
+			video {
+				display: block;
+				vertical-align: middle;
+			}
+			img,
+			video {
+				max-width: 100%;
+				height: auto;
+			}
+			[hidden] {
+				display: none;
+			}
+			*,
+			::before,
+			::after {
+				--tw-border-spacing-x: 0;
+				--tw-border-spacing-y: 0;
+				--tw-translate-x: 0;
+				--tw-translate-y: 0;
+				--tw-rotate: 0;
+				--tw-skew-x: 0;
+				--tw-skew-y: 0;
+				--tw-scale-x: 1;
+				--tw-scale-y: 1;
+				--tw-pan-x: ;
+				--tw-pan-y: ;
+				--tw-pinch-zoom: ;
+				--tw-scroll-snap-strictness: proximity;
+				--tw-gradient-from-position: ;
+				--tw-gradient-via-position: ;
+				--tw-gradient-to-position: ;
+				--tw-ordinal: ;
+				--tw-slashed-zero: ;
+				--tw-numeric-figure: ;
+				--tw-numeric-spacing: ;
+				--tw-numeric-fraction: ;
+				--tw-ring-inset: ;
+				--tw-ring-offset-width: 0px;
+				--tw-ring-offset-color: #fff;
+				--tw-ring-color: rgb(59 130 246 / 0.5);
+				--tw-ring-offset-shadow: 0 0 #0000;
+				--tw-ring-shadow: 0 0 #0000;
+				--tw-shadow: 0 0 #0000;
+				--tw-shadow-colored: 0 0 #0000;
+				--tw-blur: ;
+				--tw-brightness: ;
+				--tw-contrast: ;
+				--tw-grayscale: ;
+				--tw-hue-rotate: ;
+				--tw-invert: ;
+				--tw-saturate: ;
+				--tw-sepia: ;
+				--tw-drop-shadow: ;
+				--tw-backdrop-blur: ;
+				--tw-backdrop-brightness: ;
+				--tw-backdrop-contrast: ;
+				--tw-backdrop-grayscale: ;
+				--tw-backdrop-hue-rotate: ;
+				--tw-backdrop-invert: ;
+				--tw-backdrop-opacity: ;
+				--tw-backdrop-saturate: ;
+				--tw-backdrop-sepia: ;
+			}
+			::backdrop {
+				--tw-border-spacing-x: 0;
+				--tw-border-spacing-y: 0;
+				--tw-translate-x: 0;
+				--tw-translate-y: 0;
+				--tw-rotate: 0;
+				--tw-skew-x: 0;
+				--tw-skew-y: 0;
+				--tw-scale-x: 1;
+				--tw-scale-y: 1;
+				--tw-pan-x: ;
+				--tw-pan-y: ;
+				--tw-pinch-zoom: ;
+				--tw-scroll-snap-strictness: proximity;
+				--tw-gradient-from-position: ;
+				--tw-gradient-via-position: ;
+				--tw-gradient-to-position: ;
+				--tw-ordinal: ;
+				--tw-slashed-zero: ;
+				--tw-numeric-figure: ;
+				--tw-numeric-spacing: ;
+				--tw-numeric-fraction: ;
+				--tw-ring-inset: ;
+				--tw-ring-offset-width: 0px;
+				--tw-ring-offset-color: #fff;
+				--tw-ring-color: rgb(59 130 246 / 0.5);
+				--tw-ring-offset-shadow: 0 0 #0000;
+				--tw-ring-shadow: 0 0 #0000;
+				--tw-shadow: 0 0 #0000;
+				--tw-shadow-colored: 0 0 #0000;
+				--tw-blur: ;
+				--tw-brightness: ;
+				--tw-contrast: ;
+				--tw-grayscale: ;
+				--tw-hue-rotate: ;
+				--tw-invert: ;
+				--tw-saturate: ;
+				--tw-sepia: ;
+				--tw-drop-shadow: ;
+				--tw-backdrop-blur: ;
+				--tw-backdrop-brightness: ;
+				--tw-backdrop-contrast: ;
+				--tw-backdrop-grayscale: ;
+				--tw-backdrop-hue-rotate: ;
+				--tw-backdrop-invert: ;
+				--tw-backdrop-opacity: ;
+				--tw-backdrop-saturate: ;
+				--tw-backdrop-sepia: ;
+			}
+			.container {
+				width: 100%;
+			}
+			@media (min-width: 640px) {
+				.container {
+					max-width: 640px;
 				}
-			</style>
-			<section class="flex h-full items-center justify-center py-6">
-				<div class="container">
-					<div class="flex flex-col rounded-md bg-white p-4 shadow-md lg:rounded-3xl lg:p-10">
-						<div class="flex items-center justify-center gap-2 border-b border-gray-300 pb-4 lg:items-start">
-							<img class="lg:mt-1" src="./img/icons-content/gulp-logo.svg" alt="" width="16" height="16" loading="lazy" aria-hidden="true" />
-							<h1 class="text-center text-3xl font-bold lg:text-5xl">Gulp-збірка для верстки</h1>
-						</div>
-						<div class="mt-4 text-base text-black">
-							<p>Gulp-збірка для верстки з використанням шаблонізатора PUG, CSS фреймворку Tailwind CSS та препроцесора SASS для середніх за розміром проєктів (інтернет-магазин, корпоративний сайт, сервіс).</p>
-						</div>
-						<div class="mt-5 flex flex-col items-center justify-between gap-1 lg:flex-row lg:gap-5">
-							<img src="./img/icons-content/pug-logo.svg" alt="" width="200" height="100" loading="lazy" aria-hidden="true" />
-							<img src="./img/icons-content/tailwindcss-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true" />
-							<img src="./img/icons-content/sass-logo.svg" alt="" width="200" height="" loading="lazy" aria-hidden="true" />
-						</div>
-						<div class="mt-4 text-base text-black">
-							<p>З метою оптимізації кінцевого результату та зручності підтримки продукту кожна HTML-сторінка містить в собі:</p>
-							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li>
-									загальні CSS-файли - ті, що використовуються на всіх сторінках (як власні стилі, так і бібліотеки):
-									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">tailwind.css</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.css</span></li>
-									</ul>
-								</li>
-								<li>
-									унікальні CSS-файли - ті, що використовуються лише на цій сторінці (як власні стилі, так і бібліотеки):
-									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">owl.carousel.min.css</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">owl.theme.default.min.css</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">product.css</span></li>
-									</ul>
-								</li>
-								<li>
-									загальні JS-файли - ті, що використовуються на всіх сторінках (як власні скрипти, так і бібліотеки):
-									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">jquery.min.js</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.js</span></li>
-									</ul>
-								</li>
-								<li>
-									унікальні JS-файли - ті, що використовуються лише на цій сторінці (як власні скрипти, так і бібліотеки):
-									<ul class="mt-2 flex flex-col gap-2 pl-6" style="list-style-type: circle">
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">owl.carousel.min.js</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">...</span></li>
-										<li><span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">product.js</span></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Демонстраційні сторінки</h2>
-							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li><a class="text-blue-400 hover:underline" href="home.html" target="_blank">Головна</a></li>
-								<li><a class="text-blue-400 hover:underline" href="account.html" target="_blank">Особистий кабінет</a></li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Загальна інформація</h2>
-							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">+input.pug</span>
-									,
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">+input.sass</span>
-									-
-									<a class="text-blue-400 hover:underline" href="https://pugjs.org/language/mixins.html" target="_blank">міксин</a>
-									, назва файлу завжди починається з +.
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_section.pug</span>
-									,
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_section.sass</span>
-									- шаблон, назва файлу завжди починається з _.
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">include _section.pug</span>
-									- підключити pug-файл. Шлях відносно поточного файлу.
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">@import _section.sass</span>
-									- підключити sass-файл. Шлях відносно поточного файлу.
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
-									=>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block css</span>
-									,
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block js</span>
-									,
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block content</span>
-									,
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">block modal</span>
-									- місця, в яких буде знаходитись код з дочірніх сторінок, що наслідують цей шаблон.
-								</li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Структура - PUG</h2>
-							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/</span>
-									<span>
-										- містить шаблон всіх сторінок
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">main.pug</span>
-										та файли, які можуть бути використані на кожній сторінці (хедер, футер, модальні вікна авторизації, ...).
-									</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/pages/</span>
-									<span>
-										- назва теки відповідає сторінці, має основний файл
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">index.pug</span>
-										та секції (блоки) цієї сторінки
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_promo.pug</span>
-										.
-									</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/partials/</span>
-									<span>
-										- тека для розташування глобальних міксинів. Глобальні міксини підключаються в
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
-										.
-									</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/templates/</span>
-									<span>- тека для розміщення шаблонного коду (хлібні крихти, пагінація, ...).</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/</span>
-									<span>
-										- звідси таск-менеджер візьме pug-файл та скомпілює html-файл з відповідною назвою. Всі сторінки крім
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">index.pug</span>
-										просто підключають основний файл відповідної сторінки з
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/pages/</span>
-										.
-									</span>
-								</li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Структура - SASS</h2>
-							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/base/</span>
-									<span>- набір загальних стилів.</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/pages/</span>
-									<span>- назва теки відповідає сторінці. Містить в собі стилі для секцій (блоків) відповідної сторінки.</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/partials/</span>
-									<span>- стилі глобальних міксинів та шаблонів.</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/tailwind/</span>
-									<span>- базовий tailwind-файл.</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/</span>
-									<span>- з кореня теки таск-менеджер візьме sass-файл та скомпілює css-файл з відповідною назвою.</span>
-								</li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Структура - IMG</h2>
-							<ul class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/content/</span>
-									<span>- контенті зображення (зображення товару, зображення для блогу, баннер, ...)</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/favicon/</span>
-									<span>- фавікон та маніфест-файл</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/icons/</span>
-									<span>- інтерфейсні іконки (стрілка, пошук, чекбокс, ..)</span>
-								</li>
-								<li>
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/icons-content/</span>
-									<span>- контентні іконки (логотипи, декоративні елементи, ..)</span>
-								</li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Опис gulp-задач</h2>
-							<ul class="mt-2 flex list-decimal flex-col gap-2 pl-6">
-								<li>
-									<span class="mr-2 font-bold">clean()</span>
-									- видалити вміст
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs</span>
-								</li>
-								<li>
-									<span class="mr-2 font-bold">copyJs()</span>
-									- скопіювати js-файли з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/js/*</span>
-									в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/js/</span>
-									(без обробки)
-								</li>
-								<li>
-									<span class="mr-2 font-bold">copyImg()</span>
-									- скопіювати зображення з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/img/*</span>
-									в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/img/</span>
-									(без обробки)
-								</li>
-								<li>
-									<span class="mr-2 font-bold">copyLibs()</span>
-									- скопіювати бібліотеки з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/libs/*</span>
-									в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/libs/</span>
-									(без обробки)
-								</li>
-								<li>
-									<span class="mr-2 font-bold">copyFonts()</span>
-									- скопіювати шрифти з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/fonts/*</span>
-									в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/fonts/</span>
-									(без обробки)
-								</li>
-								<li>
-									<span class="mr-2 font-bold">devStyles()</span>
-									- обробити sass-файли з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/*</span>
-									та покласти в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/css</span>
-								</li>
-								<li>
-									<span class="mr-2 font-bold">prodStyles()</span>
-									- обробити sass-файли з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/sass/*</span>
-									та покласти в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/css</span>
-									з постобробкою для production
-								</li>
-								<li>
-									<span class="mr-2 font-bold">jade()</span>
-									- обробити pug-файли з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/*</span>
-									та покласти в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/</span>
-								</li>
-								<li>
-									<span class="mr-2 font-bold">jadeProd()</span>
-									- обробити pug-файли з
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/gulp-pages/*</span>
-									та покласти в
-									<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">docs/</span>
-									з постобробкою для production
-								</li>
-								<li>
-									<span class="mr-2 font-bold">livePreview()</span>
-									- запустити локальний сервер
-								</li>
-								<li>
-									<span class="mr-2 font-bold">watchFiles()</span>
-									- відстежувати зміну файлів
-								</li>
-								<li>
-									<span class="mr-2 font-bold">previewReload()</span>
-									- перезавантажити сервер якщо файли змінились
-								</li>
-							</ul>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Запитання і відповіді</h2>
-							<div class="mt-2 flex flex-col gap-4 lg:px-4">
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">Чому автоматично ніяк не обробляється (стискається) растрова графіка?</dt>
-									<dd>
-										Особисто мені цей функціонал не потрібен. Як контентні зображення я використовую
-										<a class="text-blue-400 hover:underline" href="https://picsum.photos/" target="_blank">плейсхоледери</a>
-										, а декоративні елементи якщо вони растрові - обробляю в ручному режимі.
-									</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">Чому автоматично ніяк не обробляється (стискається) векторна графіка?</dt>
-									<dd>Тому що постійно доводиться змінювати правила обробки від проєкту до проєкту. Якість векторної графіки в дизайні буває різною, SVG може містити в собі то растрову графіку, то скрипти, то прозорість замість кольору. Це не дуже зручно, тож прийнято рішення обробляти в ручному режимі.</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">Чому не використовується svg-спрайт?</dt>
-									<dd>Тому що з цим зручно працювати лише на етапі верстки. На етапі підтримки та розвитку проєкту коли все змінюється - важко тримати його в актуальному стані.</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">
-										В sass-файлах можна знайти
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">_HOTFIX.sass</span>
-										. Що це?
-									</dt>
-									<dd>Цей файл створено для бекенд-розробників на той випадок, коли треба терміново щось пофіксити, але немає часу розбиратись (або він не дуже в верстку). Вони пишуть туди будь-який "брудний" код, потім я його переробляю і переношу куди потрібно.</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">
-										Навіщо в файлі
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
-										є змінна
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">var version = '?v=1'</span>
-									</dt>
-									<dd>Ця змінна використовується для тих випадків, коли треба оновити файли верстки на хостингу з кешуванням. Зміна версії призведе до сприйняття файлу сервером як нового.</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">Навіщо створювати окремі css-файли під кожну сторінку?</dt>
-									<dd>Це зручно з точки зору оптимізації та підтримки великих проєктів.</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">
-										Якщо файл
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.css</span>
-										використовується на всіх сторінках - чому він підключається на конкретній сторінці перед іншими css-файлами а не в
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">src/pug/layouts/main.pug</span>
-										?
-									</dt>
-									<dd>
-										Тому що на конкретній сторінці можуть підключатися сторонні бібліотеки. У випадку коли нам потрібно кастомізувати цю бібліотеку перезаписом стилів в
-										<span class="mx-1 h-auto rounded-sm bg-gray-100 px-1.5 py-1 text-base font-normal">all-pages.css</span>
-										порядок підключення файлів може мати значення.
-									</dd>
-								</dl>
-								<dl class="flex flex-col gap-2 border-b border-gray-100 pb-2">
-									<dt class="text-xl font-bold">Навіщо помаранчевий блок з посиланнями що відкривають модальні вікна?</dt>
-									<dd>Для бекенд-розробників, щоб завжди було очевидно що є прихованним на цій конкретній сторінці.</dd>
-								</dl>
-							</div>
-						</div>
-						<div class="mt-8 flex flex-col gap-2">
-							<h2 class="flex items-center gap-2 border-b border-gray-300 pb-2 text-2xl font-bold lg:pb-4 lg:text-3xl">Корисні сторонні сервіси</h2>
-							<ol class="mt-2 flex list-disc flex-col gap-2 pl-6">
-								<li>
-									<a class="text-blue-400 hover:underline" href="https://jakearchibald.github.io/svgomg/" target="_blank">SVGOMG</a>
-									<span class="ml-2">- для обробки векторної графіки (svg)</span>
-								</li>
-								<li>
-									<a class="text-blue-400 hover:underline" href="https://squoosh.app/" target="_blank">Squoosh</a>
-									<span class="ml-2">- для обробки растрової графіки (jpg, png, webp, ..)</span>
-								</li>
-								<li>
-									<a class="text-blue-400 hover:underline" href="https://picsum.photos/" target="_blank">Lorem Picsum</a>
-									<span class="ml-2">- для генерації зображень будь-яких розмірів (плейсхолдери)</span>
-								</li>
-							</ol>
-						</div>
+			}
+			@media (min-width: 768px) {
+				.container {
+					max-width: 768px;
+				}
+			}
+			@media (min-width: 1024px) {
+				.container {
+					max-width: 1024px;
+				}
+			}
+			@media (min-width: 1280px) {
+				.container {
+					max-width: 1280px;
+				}
+			}
+			@media (min-width: 1536px) {
+				.container {
+					max-width: 1536px;
+				}
+			}
+			.mx-auto {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.w-full {
+				width: 100%;
+			}
+			.bg-\[\#e0e0e0\] {
+				--tw-bg-opacity: 1;
+				background-color: rgb(224 224 224 / var(--tw-bg-opacity));
+			}
+			.px-4 {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+			.py-10 {
+				padding-top: 2.5rem;
+				padding-bottom: 2.5rem;
+			}
+			.title {
+				margin-bottom: 2rem;
+				text-align: center;
+				font-size: 2.25rem;
+				line-height: 2.5rem;
+				font-weight: 700;
+				--tw-text-opacity: 1;
+				color: rgb(0 0 0 / var(--tw-text-opacity));
+			}
+			.subtitle {
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				line-height: 2rem;
+				font-weight: 700;
+				--tw-text-opacity: 1;
+				color: rgb(0 0 0 / var(--tw-text-opacity));
+			}
+			.wrapper {
+				display: grid;
+				gap: 2rem;
+			}
+			@media (min-width: 1024px) {
+				.wrapper {
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+				}
+			}
+			.card {
+				display: flex;
+				width: 100%;
+				min-width: 300px;
+				flex-direction: column;
+				border-radius: 1.5rem;
+				--tw-bg-opacity: 1;
+				background-color: rgb(224 224 224 / var(--tw-bg-opacity));
+				padding-top: 1.25rem;
+				padding-bottom: 1.25rem;
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+			.link {
+				font-size: 1rem;
+				line-height: 1.5rem;
+				--tw-text-opacity: 1;
+				color: rgb(0 0 0 / var(--tw-text-opacity));
+				transition-property:
+					color,
+					background-color,
+					border-color,
+					fill,
+					stroke,
+					opacity,
+					box-shadow,
+					transform,
+					filter,
+					-webkit-text-decoration-color,
+					-webkit-backdrop-filter;
+				transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+				transition-property:
+					color,
+					background-color,
+					border-color,
+					text-decoration-color,
+					fill,
+					stroke,
+					opacity,
+					box-shadow,
+					transform,
+					filter,
+					backdrop-filter,
+					-webkit-text-decoration-color,
+					-webkit-backdrop-filter;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 300ms;
+			}
+			.link:hover {
+				-webkit-text-decoration-line: underline;
+				text-decoration-line: underline;
+			}
+			.list {
+				display: flex;
+				list-style-type: decimal;
+				flex-direction: column;
+				gap: 0.5rem;
+				padding-left: 1.5rem;
+			}
+			.list li {
+				line-height: 1;
+			}
+		</style>
+	</head>
+	<body class="bg-[#e0e0e0]">
+		<main class="py-10">
+			<div class="container mx-auto w-full px-4">
+				<h1 class="title">Project Name</h1>
+				<div class="wrapper">
+					<div class="card">
+						<h2 class="subtitle">Pages list</h2>
+						<ul class="list">
+							<li><a class="link" href="ui.html" target="_blank">UI</a></li>
+							<li><a class="link" href="home.html" target="_blank">Головна</a></li>
+						</ul>
 					</div>
 				</div>
-			</section>
-		</main>
-		<footer class="footer" id="footer"><span>Футер</span></footer>
-		<!-- Modals - всі сторінки-->
-		<div class="modal modal--example" id="modal-global">
-			<div class="modal__wrapper">
-				<div class="modal__head mb-2">Модальне вікно - глобальне</div>
-				<div class="modal__content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque porro dolorum ducimus laborum sequi, vero odio velit earum. Ipsum consequatur molestiae dicta praesentium porro quo enim architecto, in omnis error?</div>
 			</div>
-		</div>
-		<!-- Modals - конкретна сторінка-->
-		<!-- JS - всі сторінки-->
-		<script src="libs/jquery/jquery-3.6.3.min.js"></script>
-		<script src="libs/jquery-ui/jquery-ui.min.js"></script>
-		<script src="libs/jquery-modal/jquery.modal.min.js"></script>
-		<!-- JS - тільки для цієї сторінки-->
-		<script src="js/all-pages.js"></script>
+		</main>
 	</body>
 </html>
