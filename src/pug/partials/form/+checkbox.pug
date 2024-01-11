@@ -1,0 +1,23 @@
+mixin checkbox(o)
+	div(class="js-input i-checkbox " + o.wrapperClass)
+		label(tabindex="0" class="i-checkbox__inner")
+			if (o.isChecked == true)
+				input(type="checkbox" checked="checked" class="visually-hidden")
+			else
+				input(type="checkbox" class="visually-hidden")
+			span(class="i-checkbox__fake")
+			if (o.content !== "")
+				span(class="i-checkbox__content")
+					| #{ o.content }
+		div(class="i-input-error")
+			| Error message
+		div(class="i-input-notice")
+			| #{ o.noticeMessage }
+
+//- prettier-ignore
+//- +checkbox({
+//- 	wrapperClass: "i-error",
+//- 	isChecked: false,
+//- 	content: "",
+//- 	noticeMessage: ""
+//- })

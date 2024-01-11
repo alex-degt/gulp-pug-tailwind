@@ -1,0 +1,20 @@
+mixin input(o)
+	div(class="js-input i-input " + o.wrapperClass)
+		label(class="i-input__inner " + o.labelClass)
+			input(class="i-input__field" value=o.value id=o.id name=o.name type=o.type placeholder=o.placeholder)
+		div(class="i-input-error")
+			| Error message
+		div(class="i-input-notice")
+			| #{ o.noticeMessage }
+
+//- prettier-ignore
+//- +input({
+//- 	wrapperClass: "i-error",
+//- 	labelClass: "",
+//- 	value: "",
+//- 	id: "",
+//- 	name: "",
+//- 	type: "text",
+//- 	placeholder: "",
+//- 	noticeMessage: ""
+//- })

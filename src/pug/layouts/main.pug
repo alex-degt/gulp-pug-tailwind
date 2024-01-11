@@ -1,6 +1,9 @@
 //- mixins global
-include ../partials/+input.pug
-include ../partials/+icon-pug.pug
+include ../partials/form/+input.pug
+include ../partials/form/+textarea.pug
+include ../partials/form/+select.pug
+include ../partials/form/+checkbox.pug
+include ../partials/form/+radio.pug
 
 //- version of css file
 - var version = "?v=1";
@@ -33,16 +36,16 @@ html(lang="uk")
 
 		title #{ title }
 
-	body.body
+	body(class="body")
 		include _header.pug
 
-		main#main.main
+		main#main(class="main")
 			block content
 
 		include _footer.pug
 
 		// Modals - всі сторінки
-		include modals/_global-modal.pug
+		//- include modals/_global-modal.pug
 
 		// Modals - конкретна сторінка
 		block modals

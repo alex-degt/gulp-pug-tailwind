@@ -1,0 +1,69 @@
+.i-input.with-country-select
+	--input-tel-gap-to-menu: 4px
+	--input-tel-menu-bg: var(--input-bg)
+	--input-tel-menu-border-radius: var(--input-border-radius)
+	--input-tel-menu-border-color: var(--input-border-color)
+	--input-tel-menu-item-paddings: 12px
+	--input-tel-menu-item-gap-x: 12px
+	--input-tel-menu-item-selected-bg: var(--slate-100)
+	--input-tel-menu-item-hovered-bg: var(--slate-200)
+	--scrollbar-thumb-color: var(--slate-400)
+	--scrollbar-bg: transparent
+	--scrollbar-radius: 2px
+	--scrollbar-width: 6px
+
+.iti__country-list
+	min-width: 252px
+	width: max-content
+
+	scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-bg)
+	scrollbar-width: thin
+	&::-webkit-scrollbar
+		width: var(--scrollbar-width)
+		height: var(--scrollbar-width)
+	&::-webkit-scrollbar-track
+		background-color: var(--scrollbar-bg)
+	&::-webkit-scrollbar-thumb
+		border-radius: var(--scrollbar-radius)
+		background-color: var(--scrollbar-thumb-color)
+
+	@media (min-width: 768px)
+		overflow-x: hidden
+
+.iti--allow-dropdown
+	.iti__flag-container
+		.iti__selected-flag
+			border-top-left-radius: var(--input-tel-menu-border-radius)
+			border-bottom-left-radius: var(--input-tel-menu-border-radius)
+
+.iti--allow-dropdown
+	.iti__flag-container:hover
+		.iti__selected-flag
+			background-color: var(--input-tel-menu-item-hovered-bg)
+
+// Дозволити перенос слів для елементів випадаючого списку
+.iti__country
+	white-space: normal
+
+.iti__country-name
+	font-size: var(--input-font-size)
+
+.iti__country.iti__highlight
+	background-color: var(--slate-200)
+
+.iti__country-list
+	margin-top: var(--input-tel-gap-to-menu)
+	margin-bottom: var(--input-tel-gap-to-menu)
+	border-color: var(--input-tel-menu-border-color)
+	border-radius: var(--input-tel-menu-border-radius)
+	background-color: var(--input-tel-menu-bg)
+	box-shadow: unset
+
+.iti__country
+	padding: var(--input-tel-menu-item-paddings)
+
+.iti__flag-box
+	margin-right: var(--input-tel-menu-item-gap-x)
+
+.iti__active
+	background-color: var(--input-tel-menu-item-selected-bg)

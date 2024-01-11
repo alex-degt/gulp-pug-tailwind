@@ -1,0 +1,132 @@
+.i-select-wrapper
+	// Field
+	--select-x-padding: var(--input-paddings-x)
+	--select-height: var(--input-height)
+	--select-radius: var(--input-border-radius)
+	--select-text-color: var(--input-text-color)
+	--select-placeholder-color: var(--input-text-color)
+	--select-font-size: var(--input-font-size)
+	--select-font-weight: var(--input-font-weight)
+	--select-border-color: var(--input-border-color)
+	--select-border-width: var(--input-border-width)
+	--select-bg: var(--input-bg)
+	// Arrow
+	--select-arrow-size: 20px
+	--select-arrow-right-gap: 20px
+	--select-arrow-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%237E8695' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='1.5' d='m13.28 5.967-4.346 4.346a1.324 1.324 0 0 1-1.867 0L2.721 5.967'/%3E%3C/svg%3E")
+	// Field - [focus] state
+	--select-focus-outline-width: var(--input-focus-outline-width)
+	--select-focus-outline-style: var(--input-focus-outline-style)
+	--select-focus-outline-color: var(--input-focus-outline-color)
+	--select-focus-outline-offset: var(--input-focus-outline-offset)
+	--select-focus-border-color: var(--input-focus-border-color)
+	// Menu
+	--select-gap-to-menu: 8px
+	--select-menu-bg: var(--input-bg)
+	--select-menu-margin-y: 4px
+	--select-menu-border-color: var(--input-border-color)
+	--select-menu-item-paddings: 12px
+	--select-menu-item-selected-bg: var(--slate-100)
+	--select-menu-item-hovered-bg: var(--slate-200)
+
+.i-select-wrapper
+	position: relative
+	display: flex
+	flex-direction: column
+	width: 100%
+
+.i-select-wrapper.i-error
+	.select2-container
+		.selection
+			.select2-selection
+				border-color: var(--input-error-border-color)!important
+
+// Селект - закрито
+.select2.select2-container
+	.selection
+		.select2-selection,
+		.select2-selection.select2-selection--single
+			height: var(--select-height)
+			border-width: var(--select-border-width)
+			border-color: var(--select-border-color)
+			border-radius: var(--select-radius)
+			background-color: var(--select-bg)
+		.select2-selection__rendered
+			padding-right: calc(var(--select-arrow-size) + var(--select-x-padding) + 8px)
+			padding-left: var(--select-x-padding)
+			color: var(--select-text-color)
+			font-weight: var(--select-font-weight)
+			font-size: var(--select-font-size)
+			// Якщо border-width = 0 - відмовитись від калькуляції висоти
+			// line-height: calc(var(--select-height) - (var(--select-border-width) * 2))
+			line-height: var(--select-height)
+		.select2-selection__placeholder
+			color: var(--select-placeholder-color)
+		.select2-selection__arrow
+			top: 50%
+			right: var(--select-arrow-right-gap)
+			display: flex
+			align-items: center
+			justify-content: center
+			width: var(--select-arrow-size)
+			height: var(--select-arrow-size)
+			transform: translateY(-50%)
+			b
+				top: auto
+				right: auto
+				bottom: auto
+				left: auto
+				display: block
+				margin: 0
+				width: var(--select-arrow-size)
+				height: var(--select-arrow-size)
+				border: none
+				background-image: var(--select-arrow-icon)
+				background-position: center
+				background-size: cover
+				background-repeat: no-repeat
+
+.select2.select2-container.select2-container--open
+	.selection
+		.select2-selection--single,
+		.select2-selection--multiple
+			border: var(--select-border-width) solid var(--select-focus-border-color)
+			outline-width: var(--input-focus-outline-width)
+			outline-style: var(--input-focus-outline-style)
+			outline-color: var(--input-focus-outline-color)
+			outline-offset: var(--input-focus-outline-offset)
+			.select2-selection__arrow
+				transform: translateY(-50%) rotate(180deg)
+				b
+					border: none
+
+.select2-container--default.select2-container--open.select2-container--above
+	.select2-selection--single,
+	.select2-selection--multiple
+		border-radius: var(--select-radius)
+
+.select2-dropdown--below
+	margin-top: var(--select-gap-to-menu)
+
+.select2-dropdown--above
+	margin-top: calc(0px - var(--select-gap-to-menu))
+
+// Селект - меню
+.select2-container
+	.select2-dropdown
+		overflow: hidden
+		border: var(--select-border-width) solid var(--select-menu-border-color)
+		border-radius: var(--select-radius)
+		background-color: var(--select-menu-bg)
+	.select2-results__option
+		padding: var(--select-menu-item-paddings)
+		color: var(--select-text-color)
+		font-weight: var(--select-font-weight)
+		font-size: var(--select-font-size)
+	.select2-results__options
+		.select2-results__option--selected
+			background-color: var(--select-menu-item-selected-bg)
+			color: var(--select-text-color)
+		.select2-results__option--highlighted
+			background-color: var(--select-menu-item-hovered-bg)
+			color: var(--select-text-color)

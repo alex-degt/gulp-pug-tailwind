@@ -1,6 +1,6 @@
 {
 	"name": "gulp-pug-tailwind",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "StarterKit with Gulp + Tailwind CSS",
 	"main": "gulpfile.js",
 	"type": "module",
@@ -10,8 +10,9 @@
 		"tailwind": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --watch",
 		"tailwind-prod": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --minify",
 		"html-formatting": "npx prettier --write docs/**/*.html",
+		"html-lint": "npx htmlhint docs/**/*.html",
 		"dev": "npm-run-all --parallel gulp-dev tailwind",
-		"prod": "npm-run-all gulp-prod html-formatting tailwind-prod"
+		"prod": "npm-run-all gulp-prod html-formatting tailwind-prod html-lint"
 	},
 	"devDependencies": {
 		"@prettier/plugin-pug": "^3.0.0",
@@ -28,6 +29,7 @@
 		"gulp-pug": "^5.0.0",
 		"gulp-sass": "^5.1.0",
 		"gulp-sass-glob": "^1.1.0",
+		"htmlhint": "^1.1.4",
 		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.33",
 		"prettier": "^3.1.1",

@@ -1,0 +1,32 @@
+div(class="flex flex-col gap-5 px-5 py-10")
+	h2(class="text-2xl font-bold text-black")
+		| Checkboxes
+	div(class="grid grid-cols-4 gap-4")
+		//- prettier-ignore
+		+checkbox({
+			wrapperClass: "",
+			isChecked: false,
+			content: "I accept the privacy policy",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+checkbox({
+			wrapperClass: "",
+			isChecked: true,
+			content: "I accept the privacy policy",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+checkbox({
+			wrapperClass: "disabled",
+			isChecked: true,
+			content: "I accept the privacy policy",
+			noticeMessage: ""
+		})
+		//- prettier-ignore
+		+checkbox({
+			wrapperClass: "i-error",
+			isChecked: false,
+			content: "I accept the privacy policy",
+			noticeMessage: "You must accept our rules"
+		})

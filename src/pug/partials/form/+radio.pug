@@ -1,0 +1,25 @@
+mixin radio(o)
+	div(class="js-input i-radio " + o.wrapperClass)
+		label(tabindex="0" class="i-radio__inner")
+			if (o.isChecked == true)
+				input(type="radio" checked="checked" name=o.name value=o.value class="visually-hidden")
+			else
+				input(type="radio" name=o.name value=o.value class="visually-hidden")
+			span(class="i-radio__fake")
+			if (o.content !== "")
+				span(class="i-radio__content")
+					| #{ o.content }
+		div(class="i-input-error")
+			| Error message
+		div(class="i-input-notice")
+			| #{ o.noticeMessage }
+
+//- prettier-ignore
+//- +radio({
+//- 	wrapperClass: "i-error",
+//- 	name: "test-radio",
+//- 	value: "1",
+//- 	isChecked: false,
+//- 	content: "",
+//- 	noticeMessage: ""
+//- })

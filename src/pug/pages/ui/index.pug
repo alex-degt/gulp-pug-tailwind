@@ -1,0 +1,52 @@
+extends ../../layouts/main.pug
+
+block variables
+	- const title = "UI";
+
+block css
+	link(rel="stylesheet" href="libs/select/select2.min.css")
+	link(rel="stylesheet" href="libs/intl-tel/css/intlTelInput.min.css")
+	link(rel="stylesheet" href="css/all-pages.css" + version)
+
+block js
+	script(src="libs/select/select2.full.min.js")
+	script(src="libs/inputmask/jquery.inputmask.min.js")
+	script(src="libs/intl-tel/js/intlTelInput-jquery.min.js")
+
+block content
+	style.
+		header,
+		footer {
+			display: none !important;
+		}
+
+	section(class="my-10")
+		div(class="container flex flex-col")
+			h1(class="mb-10 text-center text-4xl font-bold text-black")
+				| #{ title }
+			div(class="flex flex-col bg-white")
+				include _buttons.pug
+				include _inputs.pug
+				include _selects.pug
+				include _textareas.pug
+				include _checkboxes.pug
+				include _radio.pug
+
+block modals
+	include _modal-login.pug
+
+	div(class="developer-window")
+		div(class="developer-window__row")
+			div(class="developer-window__title")
+				| Modals
+			button(type="button" class="developer-window__close")
+				| X
+		div(class="developer-window__wrapper")
+			button(type="button" data-modal="#modal-login" class="js-openModal")
+				| Modal - Login
+		script.
+			document.addEventListener("DOMContentLoaded", () => {
+				$(".developer-window__close").click(function () {
+					$(this).parents(".developer-window").remove();
+				});
+			});
