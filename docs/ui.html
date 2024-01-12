@@ -35,7 +35,7 @@
 					<div class="flex flex-col bg-white">
 						<div class="flex flex-col gap-5 px-5 py-10">
 							<h2 class="text-2xl font-bold text-black">Buttons</h2>
-							<div class="grid grid-cols-4 gap-4">
+							<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<button class="s-button s-button-with-spinner" type="button">
 									<span class="s-button-with-spinner__text">Load data</span>
 									<span class="s-button-with-spinner__loader">
@@ -64,7 +64,7 @@
 						</div>
 						<div class="flex flex-col gap-5 px-5 py-10">
 							<h2 class="text-2xl font-bold text-black">Inputs</h2>
-							<div class="grid grid-cols-4 gap-4">
+							<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<div class="js-input i-input">
 									<label class="i-input__inner">
 										<input class="i-input__field" value="" id="" name="" type="text" placeholder="Your name" />
@@ -94,7 +94,7 @@
 									<div class="i-input-notice"></div>
 								</div>
 							</div>
-							<div class="grid grid-cols-4 gap-4">
+							<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<div class="js-input i-input">
 									<label class="i-input__inner">
 										<input class="i-input__field" value="" id="" name="" type="tel" placeholder="Phone number" />
@@ -130,7 +130,7 @@
 						</div>
 						<div class="flex flex-col gap-5 px-5 py-10">
 							<h2 class="text-2xl font-bold text-black">Selects</h2>
-							<div class="grid grid-cols-3 gap-4">
+							<div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<div class="js-input i-select-wrapper i-input" id="wrapper-select-sort">
 									<select class="i-select" id="select-sort" name="select-sort" data-placeholder="Sorting">
 										<option></option>
@@ -185,11 +185,48 @@
 										});
 									});
 								</script>
+								<div class="js-input i-select-wrapper i-input i-error" id="wrapper-select-sort-4">
+									<select class="i-select" id="select-sort-4" name="select-sort-4" data-placeholder="Sorting">
+										<option></option>
+										<option value="1">A-Z</option>
+										<option value="2">Z-A</option>
+									</select>
+									<span class="i-input-error">Error message</span>
+									<span class="i-input-notice"></span>
+								</div>
+								<script>
+									document.addEventListener("DOMContentLoaded", () => {
+										$("#select-sort-4").select2({
+											multiple: false,
+											minimumResultsForSearch: Infinity,
+											dropdownParent: "#wrapper-select-sort-4",
+										});
+									});
+								</script>
+							</div>
+							<div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+								<div class="js-input i-select-wrapper i-input" id="wrapper-select">
+									<select class="i-select" id="select" name="select" data-placeholder="Select with search">
+										<option></option>
+										<option value="1">A-Z</option>
+										<option value="2">Z-A</option>
+									</select>
+									<span class="i-input-error">Error message</span>
+									<span class="i-input-notice"></span>
+								</div>
+								<script>
+									document.addEventListener("DOMContentLoaded", () => {
+										$("#select").select2({
+											multiple: false,
+											dropdownParent: "#wrapper-select",
+										});
+									});
+								</script>
 							</div>
 						</div>
 						<div class="flex flex-col gap-5 px-5 py-10">
 							<h2 class="text-2xl font-bold text-black">Textareas</h2>
-							<div class="grid grid-cols-4 gap-4">
+							<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<div class="js-input i-input">
 									<label class="i-input__inner">
 										<textarea class="i-input__field" id="" name="" cols="" rows="" placeholder="Your message"></textarea>
@@ -222,7 +259,7 @@
 						</div>
 						<div class="flex flex-col gap-5 px-5 py-10">
 							<h2 class="text-2xl font-bold text-black">Checkboxes</h2>
-							<div class="grid grid-cols-4 gap-4">
+							<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<div class="js-input i-checkbox">
 									<label class="i-checkbox__inner" tabindex="0">
 										<input class="visually-hidden" type="checkbox" />
@@ -263,7 +300,7 @@
 						</div>
 						<div class="flex flex-col gap-5 px-5 py-10">
 							<h2 class="text-2xl font-bold text-black">Radio buttons</h2>
-							<div class="grid grid-cols-4 gap-4">
+							<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 								<div class="js-input i-radio">
 									<label class="i-radio__inner" tabindex="0">
 										<input class="visually-hidden" type="radio" name="test-radio" value="1" />
