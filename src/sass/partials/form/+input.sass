@@ -3,17 +3,17 @@
 	--input-wrapper-y-gap: 6px
 	// Input - [default] state
 	--input-bg: var(--white)
+	--input-border-color: var(--slate-400)
 	--input-border-radius: 6px
 	--input-border-width: 1px
-	--input-border-color: var(--slate-400)
-	--input-height: 48px
-	--input-paddings-x: 16px
 	--input-font-size: 16px
 	--input-font-weight: 400
-	--input-text-color: var(--black)
+	--input-height: 48px
+	--input-paddings-x: 16px
 	--input-placeholder-color: var(--slate-400)
+	--input-text-color: var(--black)
 	// Input - [hover] state
-	--input-border-hover-color: var(--sky-500)
+	--input-hover-border-color: var(--sky-500)
 	// Input - [focus] state
 	--input-focus-outline-width: 4px
 	--input-focus-outline-style: solid
@@ -74,7 +74,7 @@ textarea.i-input__field
 
 .i-input__field
 	&:hover
-		border-color: var(--input-border-hover-color)
+		border-color: var(--input-hover-border-color)
 	&:focus
 		outline-width: var(--input-focus-outline-width)
 		outline-style: var(--input-focus-outline-style)
@@ -150,4 +150,4 @@ textarea.i-input__field
 		transition: 0.3s
 		transform: translateY(-50%)
 		&:hover
-			color: var(--input-border-hover-color)
+			color: var(--input-hover-border-color)

@@ -1,33 +1,38 @@
 .i-select-wrapper
-	// Field
-	--select-x-padding: var(--input-paddings-x)
-	--select-height: var(--input-height)
-	--select-radius: var(--input-border-radius)
-	--select-text-color: var(--input-text-color)
-	--select-placeholder-color: var(--input-text-color)
+	// Select - [default] state
+	--select-bg: var(--input-bg)
+	--select-border-color: var(--input-border-color)
+	--select-border-radius: var(--input-border-radius)
+	--select-border-width: var(--input-border-width)
 	--select-font-size: var(--input-font-size)
 	--select-font-weight: var(--input-font-weight)
-	--select-border-color: var(--input-border-color)
-	--select-border-width: var(--input-border-width)
-	--select-bg: var(--input-bg)
-	// Arrow
+	--select-height: var(--input-height)
+	--select-paddings-x: var(--input-paddings-x)
+	--select-placeholder-color: var(--input-placeholder-color)
+	--select-text-color: var(--input-text-color)
+	// Select - arrow
 	--select-arrow-size: 20px
 	--select-arrow-right-gap: 20px
 	--select-arrow-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%237E8695' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='1.5' d='m13.28 5.967-4.346 4.346a1.324 1.324 0 0 1-1.867 0L2.721 5.967'/%3E%3C/svg%3E")
-	// Field - [focus] state
+	// Select - [hover] state
+	--select-hover-border-color: var(--input-hover-border-color)
+	// Select - [focus] state
 	--select-focus-outline-width: var(--input-focus-outline-width)
 	--select-focus-outline-style: var(--input-focus-outline-style)
 	--select-focus-outline-color: var(--input-focus-outline-color)
 	--select-focus-outline-offset: var(--input-focus-outline-offset)
 	--select-focus-border-color: var(--input-focus-border-color)
+	// Select - [error] state
+	--select-error-border-color: var(--input-error-border-color)
+	--select-error-outline-color: var(--input-error-outline-color)
 	// Menu
 	--select-gap-to-menu: 8px
 	--select-menu-bg: var(--input-bg)
-	--select-menu-margin-y: 4px
 	--select-menu-border-color: var(--input-border-color)
+	--select-menu-item-hovered-bg: var(--slate-200)
 	--select-menu-item-paddings: 12px
 	--select-menu-item-selected-bg: var(--slate-100)
-	--select-menu-item-hovered-bg: var(--slate-200)
+	--select-menu-margin-y: 4px
 
 .i-select-wrapper
 	position: relative
@@ -35,31 +40,24 @@
 	flex-direction: column
 	width: 100%
 
-.i-select-wrapper.i-error
+// Select field - closed
+.i-select-wrapper
 	.select2-container
-		.selection
-			.select2-selection
-				border-color: var(--input-error-border-color)!important
-
-// Селект - закрито
-.select2.select2-container
-	.selection
-		.select2-selection,
-		.select2-selection.select2-selection--single
+		.select2-selection
 			height: var(--select-height)
-			border-width: var(--select-border-width)
-			border-color: var(--select-border-color)
-			border-radius: var(--select-radius)
+			border: var(--select-border-width) solid var(--select-border-color)
+			border-radius: var(--select-border-radius) !important
 			background-color: var(--select-bg)
 		.select2-selection__rendered
-			padding-right: calc(var(--select-arrow-size) + var(--select-x-padding) + 8px)
-			padding-left: var(--select-x-padding)
+			padding-right: calc(var(--select-arrow-size) + var(--select-paddings-x) + 8px)
+			padding-left: var(--select-paddings-x)
+			border-radius: var(--select-border-radius)
 			color: var(--select-text-color)
 			font-weight: var(--select-font-weight)
 			font-size: var(--select-font-size)
 			// Якщо border-width = 0 - відмовитись від калькуляції висоти
-			// line-height: calc(var(--select-height) - (var(--select-border-width) * 2))
-			line-height: var(--select-height)
+			// line-height: var(--select-height)
+			line-height: calc(var(--select-height) - (var(--select-border-width) * 2))
 		.select2-selection__placeholder
 			color: var(--select-placeholder-color)
 		.select2-selection__arrow
@@ -86,37 +84,39 @@
 				background-size: cover
 				background-repeat: no-repeat
 
-.select2.select2-container.select2-container--open
-	.selection
-		.select2-selection--single,
-		.select2-selection--multiple
-			border: var(--select-border-width) solid var(--select-focus-border-color)
+// Select field - closed - hover
+.i-select-wrapper
+	&:hover
+		.select2-container
+			.select2-selection
+				border: var(--select-border-width) solid var(--select-hover-border-color)
+
+// Select field - opened
+.i-select-wrapper
+	.select2-container.select2-container--open
+		.select2-selection
 			outline-width: var(--input-focus-outline-width)
 			outline-style: var(--input-focus-outline-style)
 			outline-color: var(--input-focus-outline-color)
 			outline-offset: var(--input-focus-outline-offset)
-			.select2-selection__arrow
-				transform: translateY(-50%) rotate(180deg)
-				b
-					border: none
+			border: var(--select-border-width) solid var(--select-focus-border-color)
+		.select2-selection__arrow
+			transform: translateY(-50%) rotate(180deg)
+			b
+				border: none
 
-.select2-container--default.select2-container--open.select2-container--above
-	.select2-selection--single,
-	.select2-selection--multiple
-		border-radius: var(--select-radius)
-
+// Select menu - opened
 .select2-dropdown--below
 	margin-top: var(--select-gap-to-menu)
 
 .select2-dropdown--above
 	margin-top: calc(0px - var(--select-gap-to-menu))
 
-// Селект - меню
 .select2-container
 	.select2-dropdown
 		overflow: hidden
 		border: var(--select-border-width) solid var(--select-menu-border-color)
-		border-radius: var(--select-radius)
+		border-radius: var(--select-border-radius)
 		background-color: var(--select-menu-bg)
 	.select2-results__option
 		padding: var(--select-menu-item-paddings)
@@ -130,3 +130,38 @@
 		.select2-results__option--highlighted
 			background-color: var(--select-menu-item-hovered-bg)
 			color: var(--select-text-color)
+
+// Select with search field
+.select2-container
+	.select2-search
+		padding: calc(var(--input-focus-outline-width) + 4px)
+	.select2-search__field
+		padding-right: var(--input-paddings-x)
+		padding-left: var(--input-paddings-x)
+		width: 100%
+		height: calc(var(--input-height) - 12px)
+		outline: none
+		border: var(--input-border-width) solid var(--input-border-color) !important
+		border-radius: var(--input-border-radius)
+		background-color: var(--input-bg)
+		color: var(--input-text-color)
+		font-weight: var(--input-font-weight)
+		font-size: var(--input-font-size)
+		line-height: 1.2
+		&::placeholder
+			color: var(--input-placeholder-color)
+		&:hover
+			border-color: var(--input-hover-border-color) !important
+		&:focus
+			outline-width: var(--input-focus-outline-width)
+			outline-style: var(--input-focus-outline-style)
+			outline-color: var(--input-focus-outline-color)
+			outline-offset: var(--input-focus-outline-offset) !important
+			border-color: var(--input-focus-border-color) !important
+
+// Error
+.i-select-wrapper.i-error
+	.select2-container
+		.select2-selection
+			outline-color: var(--select-error-outline-color) !important
+			border-color: var(--select-error-border-color) !important
