@@ -1,7 +1,7 @@
 div(class="flex flex-col gap-5 px-5 py-10")
 	h2(class="text-2xl font-bold text-black")
 		| Selects
-	div(class="grid grid-cols-3 gap-4")
+	div(class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4")
 		//- prettier-ignore
 		+input-select({
 			wrapperClass: "",
@@ -54,6 +54,47 @@ div(class="flex flex-col gap-5 px-5 py-10")
 			id: "select-sort-3",
 			name: "select-sort-3",
 			placeholder: "Sorting",
+			notice: "",
+			items: [
+				{
+					value: 1,
+					text: "A-Z"
+				},
+				{
+					value: 2,
+					text: "Z-A"
+				},
+			]
+		})
+		//- prettier-ignore
+		+input-select({
+			wrapperClass: "i-error",
+			class: "",
+			wrapperId: "wrapper-select-sort-4",
+			id: "select-sort-4",
+			name: "select-sort-4",
+			placeholder: "Sorting",
+			notice: "",
+			items: [
+				{
+					value: 1,
+					text: "A-Z"
+				},
+				{
+					value: 2,
+					text: "Z-A"
+				},
+			]
+		})
+	div(class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4")
+		//- prettier-ignore
+		+input-select-with-search({
+			wrapperClass: "",
+			class: "",
+			wrapperId: "wrapper-select",
+			id: "select",
+			name: "select",
+			placeholder: "Select with search",
 			notice: "",
 			items: [
 				{
