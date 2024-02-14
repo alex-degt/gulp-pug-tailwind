@@ -1,6 +1,6 @@
 {
 	"name": "gulp-pug-tailwind",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "StarterKit with Gulp + Tailwind CSS",
 	"main": "gulpfile.js",
 	"type": "module",
