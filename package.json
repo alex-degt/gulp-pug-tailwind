@@ -4,26 +4,32 @@
 	"description": "StarterKit with Gulp + Tailwind CSS",
 	"main": "gulpfile.js",
 	"type": "module",
+	"browserslist": [
+		"last 2 versions"
+	],
 	"scripts": {
 		"gulp-dev": "gulp dev",
 		"gulp-prod": "gulp prod",
-		"tailwind": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --watch",
-		"tailwind-prod": "npx tailwindcss -i ./src/sass/tailwind/tailwind.scss -o ./docs/css/tailwind.css --minify",
-		"html-formatting": "npx prettier --write docs/**/*.html",
-		"html-lint": "npx htmlhint docs/**/*.html",
+		"tailwind": "dotenv -- cross-var npx tailwindcss -i %INPUT_TAILWIND_FILE% -o %OUTPUT_TAILWIND_FILE% --watch",
+		"tailwind-prod": "dotenv -- cross-var npx tailwindcss -i %INPUT_TAILWIND_FILE% -o %OUTPUT_TAILWIND_FILE% --minify",
+		"html-formatting": "dotenv -- cross-var npx prettier --write %OUTPUT_FOLDER%**/*.html",
+		"html-lint": "dotenv -- cross-var npx htmlhint %OUTPUT_FOLDER%**/*.html",
+		"css-formatting": "dotenv -- cross-var postcss %OUTPUT_CSS_FOLDER%**/*.css --use autoprefixer cssnano --no-map --replace",
 		"dev": "npm-run-all --parallel gulp-dev tailwind",
-		"prod": "npm-run-all gulp-prod html-formatting tailwind-prod html-lint"
+		"prod": "npm-run-all gulp-prod html-formatting css-formatting tailwind-prod html-lint"
 	},
 	"devDependencies": {
 		"@prettier/plugin-pug": "^3.0.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.10",
-		"autoprefixer": "^10.4.16",
+		"autoprefixer": "^10.4.17",
 		"browser-sync": "^3.0.2",
+		"cross-var": "^1.1.0",
+		"cssnano": "^6.0.3",
 		"del": "^7.1.0",
+		"dotenv": "^16.4.4",
+		"dotenv-cli": "^7.3.0",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^9.0.0",
-		"gulp-clean-css": "^4.3.0",
 		"gulp-notify": "^4.0.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-pug": "^5.0.0",
@@ -31,10 +37,11 @@
 		"gulp-sass-glob": "^1.1.0",
 		"htmlhint": "^1.1.4",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.4.33",
-		"prettier": "^3.1.1",
+		"postcss": "^8.4.35",
+		"postcss-cli": "^11.0.0",
+		"prettier": "^3.2.5",
 		"prettier-plugin-tailwindcss": "^0.5.11",
-		"sass": "^1.69.7",
+		"sass": "^1.70.0",
 		"tailwindcss": "^3.4.1"
 	}
 }
