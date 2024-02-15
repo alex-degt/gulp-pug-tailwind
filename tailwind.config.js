@@ -1,6 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config({ path: "./.env" });
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["src/**/*.{pug, js}"],
+	content: JSON.parse(process.env.TAILWIND_CONTENT_PATH),
 	theme: {
 		// screens: {
 		// 	sm: "640px",
@@ -18,8 +21,5 @@ module.exports = {
 	corePlugins: {
 		aspectRatio: false,
 	},
-	plugins: [
-		require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/typography")
-  ]
+	plugins: [require("@tailwindcss/aspect-ratio"), require("@tailwindcss/typography")],
 };
