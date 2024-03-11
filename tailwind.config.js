@@ -3,7 +3,8 @@ dotenv.config({ path: "./.env" });
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: JSON.parse(process.env.TAILWIND_CONTENT_PATH),
+	// content: JSON.parse(process.env.TAILWIND_CONTENT_PATH),
+	content: ["src/js/**/*.js", "src/pug/**/*.pug"],
 	theme: {
 		// screens: {
 		// 	sm: "640px",
