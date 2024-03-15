@@ -151,6 +151,19 @@ npm run dev
 npm run prod
 ```
 
+4. Якщо виникла помилка при старті збірки
+```
+const stop = fsevents.watch(path, callback);
+                        ^
+
+TypeError: fsevents.watch is not a function
+...
+```
+Необхідно перевстановити пакет
+```
+npm i watchman
+```
+
 ## Опис задач
 
 1. **clean()** - видалити вміст `docs`
@@ -202,6 +215,6 @@ npm run prod
 
 ## Корисні сторонні сервіси
 
-Для обробки векторної графіки (svg) - [SVGOMG](https://jakearchibald.github.io/svgomg/).  
-Для обробки растрової графіки (jpg, png, webp, ..) - [Squoosh](https://squoosh.app/).  
+Для обробки векторної графіки (svg) - [SVGOMG](https://jakearchibald.github.io/svgomg/).
+Для обробки растрової графіки (jpg, png, webp, ..) - [Squoosh](https://squoosh.app/).
 Для генерації зображень будь-яких розмірів (плейсхолдери) - [Lorem Picsum](https://picsum.photos/).
