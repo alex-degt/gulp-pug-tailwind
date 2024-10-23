@@ -1,15 +1,22 @@
 // Base
-@import "base/_fonts"
-@import "base/_variables"
-@import "base/_base"
-@import "base/_footer-fix"
-@import "base/_custom-scroll"
+@use "base/_fonts"
+@use "base/_variables"
+@use "base/_base"
+@use "base/_footer-fix"
+@use "base/_custom-scroll"
 
 // Partials (mixins, templates, elements)
-@import "partials/**/*"
+@use "partials/_buttons"
+@use "partials/form/_checkbox"
+@use "partials/form/_input-tel"
+@use "partials/form/_input"
+@use "partials/form/_radio"
+@use "partials/form/_select"
+@use "partials/form/_textarea"
 
 // All pages blocks
-@import "pages/all-pages/**/*"
+@use "pages/all-pages/_header"
+@use "pages/all-pages/_footer"
 
 // FOR DEVELOPERS
-@import "pages/_HOTFIX"
+@use "pages/_HOTFIX"

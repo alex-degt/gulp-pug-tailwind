@@ -17,19 +17,19 @@ function clean() {
 }
 
 function copyJs() {
-	return gulp.src(`${process.env.INPUT_FOLDER}js/**/*`).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}js/`));
+	return gulp.src(`${process.env.INPUT_FOLDER}js/**/*`, { encoding: false }).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}js/`));
 }
 
 function copyImg() {
-	return gulp.src(`${process.env.INPUT_FOLDER}img/**/*`).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}img/`));
+	return gulp.src(`${process.env.INPUT_FOLDER}img/**/*`, { encoding: false }).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}img/`));
 }
 
 function copyLibs() {
-	return gulp.src(`${process.env.INPUT_FOLDER}libs/**/*`).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}libs/`));
+	return gulp.src(`${process.env.INPUT_FOLDER}libs/**/*`, { encoding: false }).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}libs/`));
 }
 
 function copyFonts() {
-	return gulp.src(`${process.env.INPUT_FOLDER}fonts/**/*`).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}fonts/`));
+	return gulp.src(`${process.env.INPUT_FOLDER}fonts/**/*`, { encoding: false }).pipe(gulp.dest(`${process.env.OUTPUT_FOLDER}fonts/`));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +38,7 @@ function copyFonts() {
 
 function devStyles() {
 	return gulp
-		.src(`${process.env.INPUT_SASS_FOLDER}/*.sass`)
+		.src(`${process.env.INPUT_SASS_FOLDER}/*.sass`, { encoding: false })
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -58,7 +58,7 @@ function devStyles() {
 
 function jade() {
 	return gulp
-		.src(`${process.env.INPUT_FOLDER}pug/gulp-pages/*.pug`)
+		.src(`${process.env.INPUT_FOLDER}pug/gulp-pages/*.pug`, { encoding: false })
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -105,7 +105,7 @@ function previewReload(done) {
 
 function prodStyles() {
 	return gulp
-		.src(`${process.env.INPUT_SASS_FOLDER}*.sass`)
+		.src(`${process.env.INPUT_SASS_FOLDER}*.sass`, { encoding: false })
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
@@ -124,7 +124,7 @@ function prodStyles() {
 
 function jadeProd() {
 	return gulp
-		.src(`${process.env.INPUT_FOLDER}pug/gulp-pages/*.pug`)
+		.src(`${process.env.INPUT_FOLDER}pug/gulp-pages/*.pug`, { encoding: false })
 		.pipe(
 			plumber({
 				errorHandler: notify.onError(function (err) {
