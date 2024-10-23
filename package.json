@@ -42,7 +42,6 @@
 		"prettier": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.8",
 		"sass": "^1.80.3",
-		"tailwindcss": "^3.4.14",
-		"watchman": "^1.0.0"
+		"tailwindcss": "^3.4.14"
 	}
 }

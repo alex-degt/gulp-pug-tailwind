@@ -159,9 +159,9 @@ const stop = fsevents.watch(path, callback);
 TypeError: fsevents.watch is not a function
 ...
 ```
-Необхідно перевстановити пакет
+Необхідно повторити команду
 ```
-npm i watchman
+npm i
 ```
 
 ## Опис задач
