@@ -10,7 +10,6 @@ Gulp-збірка для верстки з використанням шабло
 ├── .prettierrc                        # налаштування Prettier (форматування)
 ├── gulpfile.js                        # налаштування таск-менеджеру gulp
 ├── package.json                       # залежності та npm-скрипти
-├── tailwind.config.js                 # налаштування Tailwind CSS
 └── src/                               #
     ├── fonts/                         # тека для шрифтів
     │   ├── roboto/                    # конкретний шрифт
@@ -74,12 +73,13 @@ Gulp-збірка для верстки з використанням шабло
     │       └── ...                    #
     │                                  #
     └── sass/                          # тека для стилів
+        ├── tailwind.css               # стильовий файл Tailwind CSS
         ├── all-pages.sass             # @import "base/*", @import "pages/all-pages/*", @import "partials/*" - загальний стильовий файл для всіх сторінок
         ├── home.sass                  # @import "pages/home/*" - загальний стильовий файл для конкретної сторінки
         ├── account.sass               # @import "pages/account/*" - загальний стильовий файл для конкретної сторінки
         ├── ...                        #
         ├── base/                      # базові стилі
-        │   ├── _variables.sass        #
+        │   ├── _base.sass             #
         │   ├── _fonts.sass            #
         │   └── ...                    #
         ├── pages/                     # тека для стилів конкретних сторінок
@@ -93,41 +93,39 @@ Gulp-збірка для верстки з використанням шабло
         │   │   ├── _block.sass        #
         │   │   └── ...                #
         │   └── .../                   #
-        ├── partials/                  # міксини та шаблонні елементи
-        │   ├── +input.sass            #
-        │   ├── _breadcrumbs.sass      #
-        │   └── ...                    #
-        └── tailwind/                  # стильовий файл Tailwind CSS
-            └── tailwind.scss          #
+        └── partials/                  # міксини та шаблонні елементи
+            ├── +input.sass            #
+            ├── _breadcrumbs.sass      #
+            └── ...                    #
 ```
 
 З метою оптимізації кінцевого результату та зручності підтримки продукту кожна HTML-сторінка містить в собі:
 
--   загальні CSS-файли - ті, що використовуються на всіх сторінках (як власні стилі, так і бібліотеки):
-    -   `tailwind.css`
-    -   `...`
-    -   `all-pages.css`
--   унікальні CSS-файли - ті, що використовуються лише на цій сторінці (як власні стилі, так і бібліотеки):
-    -   `owl.carousel.min.css`
-    -   `owl.theme.default.min.css`
-    -   `...`
-    -   `product.css`
--   загальні JS-файли - ті, що використовуються на всіх сторінках (як власні скрипти, так і бібліотеки):
-    -   `jquery.min.js`
-    -   `...`
-    -   `all-pages.js`
--   унікальні JS-файли - ті, що використовуються лише на цій сторінці (як власні скрипти, так і бібліотеки):
-    -   `owl.carousel.min.js`
-    -   `...`
-    -   `product.js`
+- загальні CSS-файли - ті, що використовуються на всіх сторінках (як власні стилі, так і бібліотеки):
+  - `tailwind.css`
+  - `...`
+  - `all-pages.css`
+- унікальні CSS-файли - ті, що використовуються лише на цій сторінці (як власні стилі, так і бібліотеки):
+  - `owl.carousel.min.css`
+  - `owl.theme.default.min.css`
+  - `...`
+  - `product.css`
+- загальні JS-файли - ті, що використовуються на всіх сторінках (як власні скрипти, так і бібліотеки):
+  - `jquery.min.js`
+  - `...`
+  - `all-pages.js`
+- унікальні JS-файли - ті, що використовуються лише на цій сторінці (як власні скрипти, так і бібліотеки):
+  - `owl.carousel.min.js`
+  - `...`
+  - `product.js`
 
 ## Загальна інформація
 
--   `+input.pug`, `+input.sass` - [міксин](https://pugjs.org/language/mixins.html), назва файлу завжди починається з +
--   `_section.pug`, `_section.sass` - шаблон, назва файлу завжди починається з \_
--   `include _section.pug` - підключити pug-файл. Шлях відносно поточного файлу
--   `@import _section.sass` - підключити sass-файл. Шлях відносно поточного файлу
--   `src/pug/layouts/main.pug` => `block css`, `block js`, `block content`, `block modal` - місця, в яких буде знаходитись код з дочірніх сторінок, що наслідують цей шаблон
+- `+input.pug` - [міксин](https://pugjs.org/language/mixins.html), назва файлу завжди починається з +
+- `_section.pug`, `_section.sass` - шаблон, назва файлу завжди починається з \_
+- `include _section.pug` - підключити pug-файл. Шлях відносно поточного файлу
+- `@use _section.sass` - підключити sass-файл. Шлях відносно поточного файлу
+- `src/pug/layouts/main.pug` => `block css`, `block js`, `block content`, `block modal` - місця, в яких буде знаходитись код з дочірніх сторінок, що наслідують цей шаблон
 
 ## Старт
 
@@ -149,19 +147,6 @@ npm run dev
 
 ```
 npm run prod
-```
-
-4. Якщо виникла помилка при старті збірки
-```
-const stop = fsevents.watch(path, callback);
-                        ^
-
-TypeError: fsevents.watch is not a function
-...
-```
-Необхідно повторити команду
-```
-npm i
 ```
 
 ## Опис задач
@@ -217,4 +202,4 @@ npm i
 
 Для обробки векторної графіки (svg) - [SVGOMG](https://jakearchibald.github.io/svgomg/).
 Для обробки растрової графіки (jpg, png, webp, ..) - [Squoosh](https://squoosh.app/).
-Для генерації зображень будь-яких розмірів (плейсхолдери) - [Lorem Picsum](https://picsum.photos/).
+Для генерації зображень будь-яких розмірів (плейсхолдери) - [Placehold](https://placehold.co/).
