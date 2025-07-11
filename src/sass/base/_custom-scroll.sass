@@ -1,33 +1,34 @@
-.custom-scroll
-	--scrollbar-thumb-color: red
-	--scrollbar-bg: transparent
-	--scrollbar-radius: 8px
-	--scrollbar-width: 8px
+@layer base
+	.custom-scroll
+		--scrollbar-thumb-color: red
+		--scrollbar-bg: transparent
+		--scrollbar-radius: 8px
+		--scrollbar-width: 8px
 
-.custom-scroll
-	scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-bg)
-	scrollbar-width: thin
-	&::-webkit-scrollbar
-		width: var(--scrollbar-width)
-		height: var(--scrollbar-width)
-	&::-webkit-scrollbar-track
-		background-color: var(--scrollbar-bg)
-	&::-webkit-scrollbar-thumb
-		border-radius: var(--scrollbar-radius)
-		background-color: var(--scrollbar-thumb-color)
+	.custom-scroll
+		scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-bg)
+		scrollbar-width: thin
+		&::-webkit-scrollbar
+			width: var(--scrollbar-width)
+			height: var(--scrollbar-width)
+		&::-webkit-scrollbar-track
+			background-color: var(--scrollbar-bg)
+		&::-webkit-scrollbar-thumb
+			border-radius: var(--scrollbar-radius)
+			background-color: var(--scrollbar-thumb-color)
 
-.hidden-scroll
-	scrollbar-color: transparent transparent
-	scrollbar-width: thin
-	&::-webkit-scrollbar
-		display: none
-		background-color: transparent
-		color: transparent
-	&::-webkit-scrollbar-track
-		display: none
-		background-color: transparent
-		color: transparent
-	&::-webkit-scrollbar-thumb
-		display: none
-		background-color: transparent
-		color: transparent
+	.hidden-scroll
+		scrollbar-color: transparent transparent
+		scrollbar-width: thin
+		&::-webkit-scrollbar
+			display: none
+			background-color: transparent
+			color: transparent
+		&::-webkit-scrollbar-track
+			display: none
+			background-color: transparent
+			color: transparent
+		&::-webkit-scrollbar-thumb
+			display: none
+			background-color: transparent
+			color: transparent

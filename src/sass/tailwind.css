@@ -5,11 +5,38 @@
 @source "../../src/pug";
 @source "../../src/js";
 
+/* Safelist example */
+@source inline("text-white");
+@source inline("text-black");
+@source inline("text-sky-200");
+@source inline("text-sky-400");
+@source inline("text-sky-500");
+@source inline("text-sky-600");
+@source inline("text-slate-100");
+@source inline("text-slate-200");
+@source inline("text-slate-400");
+@source inline("text-red-200");
+@source inline("text-red-400");
+@source inline("text-red-500");
+/* // Safelist example */
+
 @plugin "@tailwindcss/typography";
+/* @plugin "@tailwindcss/aspect-ratio"; */
+
+/* @utility container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 16px;
+	padding-left: 16px;
+	max-width: 1236px;
+	width: 100%;
+} */
 
 @theme {
 	/* Base font */
 	--font-sans: "Roboto", "sans-serif";
+	/* Additional font */
+	--font-custom: "Unbounded", "sans-serif";
 	/* Example of custom breakpoint */
 	--breakpoint-100xl: 1000px;
 	/* Example of custom color */

@@ -38,12 +38,15 @@ html(lang="uk")
 		title #{ title }
 
 	body(class="body")
-		include _header.pug
+		//- TIP: Додаткова обгортка контенту сторінки
+		//- Для коректної роботи sticky-header
+		div(class="body js-body")
+			include _header.pug
 
-		main#main(class="main")
-			block content
+			main#main(class="main")
+				block content
 
-		include _footer.pug
+			include _footer.pug
 
 		// Modals - всі сторінки
 		//- include modals/_global-modal.pug

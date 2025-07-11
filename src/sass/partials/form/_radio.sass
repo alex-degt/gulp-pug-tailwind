@@ -1,154 +1,155 @@
-.i-radio
-	// Wrapper
-	--radio-wrapper-y-gap: 6px
-	// Radio - [default] state
-	--radio-size: 22px
-	--radio-to-content-gap: 8px
-	--radio-bg: var(--white)
-	--radio-border-width: 1px
-	--radio-border-color: var(--slate-400)
-	--radio-hover-border-color: var(--sky-500)
-	// Radio - [checked] state
-	--radio-checked-border-color: var(--sky-500)
-	// Radio - [checked] state - ICON
-	--radio-checked-icon-size: 12px
-	--radio-checked-icon-color: var(--sky-500)
-	// Radio - [hover] state
-	--radio-hover-outline-width: 4px
-	--radio-hover-outline-style: solid
-	--radio-hover-outline-color: var(--sky-200)
-	--radio-hover-outline-offset: 0px
-	// Radio - [error] state
-	--radio-error-border-color: var(--red-400)
-	--radio-error-outline-color: var(--red-200)
-	--radio-error-text-font-size: 16px
-	--radio-error-text-font-weight: 400
-	--radio-error-text-color: var(--red-400)
-	// Radio - [all] states - CONTENT
-	--radio-content-font-size: 16px
-	--radio-content-font-weight: 400
-	--radio-content-color: var(--black)
-	// Radio - [all] states - NOTICE
-	--radio-notice-font-size: 16px
-	--radio-notice-font-weight: 400
-	--radio-notice-text-color: var(--slate-400)
+@layer components
+	.i-radio
+		// Wrapper
+		--radio-wrapper-y-gap: 6px
+		// Radio - [default] state
+		--radio-size: 22px
+		--radio-to-content-gap: 8px
+		--radio-bg: var(--color-white)
+		--radio-border-width: 1px
+		--radio-border-color: var(--color-slate-400)
+		--radio-hover-border-color: var(--color-sky-500)
+		// Radio - [checked] state
+		--radio-checked-border-color: var(--color-sky-500)
+		// Radio - [checked] state - ICON
+		--radio-checked-icon-size: 12px
+		--radio-checked-icon-color: var(--color-sky-500)
+		// Radio - [hover] state
+		--radio-hover-outline-width: 4px
+		--radio-hover-outline-style: solid
+		--radio-hover-outline-color: var(--color-sky-200)
+		--radio-hover-outline-offset: 0px
+		// Radio - [error] state
+		--radio-error-border-color: var(--color-red-400)
+		--radio-error-outline-color: var(--color-red-200)
+		--radio-error-text-font-size: 16px
+		--radio-error-text-font-weight: 400
+		--radio-error-text-color: var(--color-red-400)
+		// Radio - [all] states - CONTENT
+		--radio-content-font-size: 16px
+		--radio-content-font-weight: 400
+		--radio-content-color: var(--color-black)
+		// Radio - [all] states - NOTICE
+		--radio-notice-font-size: 16px
+		--radio-notice-font-weight: 400
+		--radio-notice-text-color: var(--color-slate-400)
 
-.i-radio
-	display: flex
-	flex-direction: column
+	.i-radio
+		display: flex
+		flex-direction: column
 
-	gap: var(--radio-wrapper-y-gap)
+		gap: var(--radio-wrapper-y-gap)
 
-.i-radio__inner
-	display: flex
-	align-items: flex-start
-	outline: none
-	cursor: pointer
-	transition: 0.3s
-
-	gap: var(--radio-to-content-gap)
-	&:hover
-		.i-radio__fake
-			outline-width: var(--radio-hover-outline-width)
-			outline-style: var(--radio-hover-outline-style)
-			outline-color: var(--radio-hover-outline-color)
-			outline-offset: var(--radio-hover-outline-offset)
-			border-color: var(--radio-hover-border-color)
-
-.i-radio__fake
-	position: relative
-	display: block
-	flex-shrink: 0
-	width: var(--radio-size)
-	height: var(--radio-size)
-	border: var(--radio-border-width) solid var(--radio-border-color)
-	border-radius: 50%
-	background-color: var(--radio-bg)
-	&::before
-		position: absolute
-		top: 50%
-		left: 50%
-		display: block
-		width: 0
-		height: 0
-		border-radius: 50%
-		background-color: var(--radio-checked-icon-color)
-		content: ""
-		opacity: 0
+	.i-radio__inner
+		display: flex
+		align-items: flex-start
+		outline: none
+		cursor: pointer
 		transition: 0.3s
-		transform: translate(-50%, -50%)
 
-.i-radio__inner
-	input:checked + .i-radio__fake
-		border-color: var(--radio-checked-border-color)
+		gap: var(--radio-to-content-gap)
+		&:hover
+			.i-radio__fake
+				outline-width: var(--radio-hover-outline-width)
+				outline-style: var(--radio-hover-outline-style)
+				outline-color: var(--radio-hover-outline-color)
+				outline-offset: var(--radio-hover-outline-offset)
+				border-color: var(--radio-hover-border-color)
+
+	.i-radio__fake
+		position: relative
+		display: block
+		flex-shrink: 0
+		width: var(--radio-size)
+		height: var(--radio-size)
+		border: var(--radio-border-width) solid var(--radio-border-color)
+		border-radius: 50%
 		background-color: var(--radio-bg)
 		&::before
-			width: var(--radio-checked-icon-size)
-			height: var(--radio-checked-icon-size)
-			opacity: 1
+			position: absolute
+			top: 50%
+			left: 50%
+			display: block
+			width: 0
+			height: 0
+			border-radius: 50%
+			background-color: var(--radio-checked-icon-color)
+			content: ""
+			opacity: 0
+			transition: 0.3s
+			transform: translate(-50%, -50%)
 
-.i-radio__content
-	margin-top: 2px
-	color: var(--radio-content-color)
-	font-weight: var(--radio-content-font-weight)
-	font-size: var(--radio-content-font-size)
-	line-height: 1.25
+	.i-radio__inner
+		input:checked + .i-radio__fake
+			border-color: var(--radio-checked-border-color)
+			background-color: var(--radio-bg)
+			&::before
+				width: var(--radio-checked-icon-size)
+				height: var(--radio-checked-icon-size)
+				opacity: 1
 
-.i-radio
-	.i-input-error,
-	.i-input-notice
-		padding-left: calc(var(--radio-size) + var(--radio-to-content-gap))
-		&:empty
+	.i-radio__content
+		margin-top: 2px
+		color: var(--radio-content-color)
+		font-weight: var(--radio-content-font-weight)
+		font-size: var(--radio-content-font-size)
+		line-height: 1.25
+
+	.i-radio
+		.i-input-error,
+		.i-input-notice
+			padding-left: calc(var(--radio-size) + var(--radio-to-content-gap))
+			&:empty
+				display: none
+
+	// Error state
+	.i-radio
+		.i-input-error
 			display: none
 
-// Error state
-.i-radio
-	.i-input-error
-		display: none
+	.i-radio.i-error
+		.i-input-error
+			display: block
+		.i-input-notice
+			display: none
+		.i-radio__fake
+			outline-color: var(--radio-error-outline-color)
+			border-color: var(--radio-error-border-color) !important
+			&::before
+				background-color: var(--radio-error-border-color)
 
-.i-radio.i-error
-	.i-input-error
-		display: block
-	.i-input-notice
-		display: none
-	.i-radio__fake
-		border-color: var(--radio-error-border-color) !important
-		outline-color: var(--radio-error-outline-color)
-		&::before
-			background-color: var(--radio-error-border-color)
+	// Error message styles
+	.i-radio
+		.i-input-error
+			margin: 0
+			color: var(--radio-error-text-color)
+			font-weight: var(--radio-error-text-font-weight)
+			font-size: var(--radio-error-text-font-size)
+			line-height: 1.2
 
-// Error message styles
-.i-radio
-	.i-input-error
-		margin: 0
-		color: var(--radio-error-text-color)
-		font-weight: var(--radio-error-text-font-weight)
-		font-size: var(--radio-error-text-font-size)
-		line-height: 1.2
+	// Notice message styles
+	.i-radio
+		.i-input-notice
+			margin: 0
+			color: var(--radio-notice-text-color)
+			font-weight: var(--radio-notice-font-weight)
+			font-size: var(--radio-notice-font-size)
+			line-height: 1.2
 
-// Notice message styles
-.i-radio
-	.i-input-notice
-		margin: 0
-		color: var(--radio-notice-text-color)
-		font-weight: var(--radio-notice-font-weight)
-		font-size: var(--radio-notice-font-size)
-		line-height: 1.2
-
-// Disabled state
-.i-radio.disabled
-	outline: none!important
-	opacity: 0.6 !important
-	filter: grayscale(1) !important
-	cursor: default!important
-	pointer-events: none !important
-
-	user-select: none !important
-	label,
-	input
+	// Disabled state
+	.i-radio.disabled
 		outline: none!important
-		&:hover,
-		&:focus,
-		&:active,
-		&:read-only:focus
+		opacity: 0.6 !important
+		filter: grayscale(1) !important
+		cursor: default!important
+		pointer-events: none !important
+
+		user-select: none !important
+		label,
+		input
 			outline: none!important
+			&:hover,
+			&:focus,
+			&:active,
+			&:read-only:focus
+				outline: none!important

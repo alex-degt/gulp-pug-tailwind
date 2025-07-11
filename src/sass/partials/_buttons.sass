@@ -1,84 +1,85 @@
-.s-button
-	--button-height: 48px
-	--button-radius: 8px
-	--button-bg: var(--sky-400)
-	--button-hover-bg: var(--sky-500)
-	--button-text-color: var(--white)
-	--button-text-size: 16px
-	--button-text-weight: 400
-	--button-loader-size: 20px
-	// Button - [disabled] state
-	--button-disabled-bg: var(--slate-400)
+@layer components
+	.s-button
+		--button-height: 48px
+		--button-radius: 8px
+		--button-bg: var(--color-sky-400)
+		--button-hover-bg: var(--color-sky-500)
+		--button-text-color: var(--color-white)
+		--button-text-size: 16px
+		--button-text-weight: 400
+		--button-loader-size: 20px
+		// Button - [disabled] state
+		--button-disabled-bg: var(--color-slate-400)
 
-.s-button
-	position: relative
-	display: flex
-	align-items: center
-	justify-content: center
-	width: 100%
-	height: var(--button-height)
-	border-radius: var(--button-radius)
-	background-color: var(--button-bg)
-	color: var(--button-text-color)
-	text-decoration: none
-	transition: .3s
-	&:hover
-		background-color: var(--button-hover-bg)
+	.s-button
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: var(--button-height)
+		border-radius: var(--button-radius)
+		background-color: var(--button-bg)
+		color: var(--button-text-color)
+		text-decoration: none
+		transition: .3s
+		&:hover
+			background-color: var(--button-hover-bg)
 
-@keyframes rotate
-	0%
-		transform: rotate(-1turn)
-	to
-		transform: rotate(1turn)
+	@keyframes rotate
+		0%
+			transform: rotate(-1turn)
+		to
+			transform: rotate(1turn)
 
-.s-button-with-spinner
-	position: relative
+	.s-button-with-spinner
+		position: relative
 
-.s-button-with-spinner__text
-	font-weight: var(--button-text-weight)
-	font-size: var(--button-text-size)
-	line-height: 1.2
-	transition: .3s
+	.s-button-with-spinner__text
+		font-weight: var(--button-text-weight)
+		font-size: var(--button-text-size)
+		line-height: 1.2
+		transition: .3s
 
-.s-btn-spinner__content
-	display: flex
-	transition: .3s
+	.s-btn-spinner__content
+		display: flex
+		transition: .3s
 
-.s-button-with-spinner__loader
-	position: absolute
-	top: 50%
-	left: 50%
-	display: block
-	width: var(--button-loader-size)
-	height: var(--button-loader-size)
-	opacity: 0
-	transition: .3s
-	transform: translate(-50%,-50%) scale(0)
+	.s-button-with-spinner__loader
+		position: absolute
+		top: 50%
+		left: 50%
+		display: block
+		width: var(--button-loader-size)
+		height: var(--button-loader-size)
+		opacity: 0
+		transition: .3s
+		transform: translate(-50%,-50%) scale(0)
 
-.s-button-with-spinner__loader svg
-	position: absolute
-	display: block
-	width: var(--button-loader-size)
-	height: var(--button-loader-size)
-	animation-name: rotate
-	animation-duration: 5s
-	animation-timing-function: linear
-	animation-iteration-count: infinite
+	.s-button-with-spinner__loader svg
+		position: absolute
+		display: block
+		width: var(--button-loader-size)
+		height: var(--button-loader-size)
+		animation-name: rotate
+		animation-duration: 5s
+		animation-timing-function: linear
+		animation-iteration-count: infinite
 
-.s-button-with-spinner.is-loading .s-button-with-spinner__text
-	opacity: 0
-	transform: scale(0)
+	.s-button-with-spinner.is-loading .s-button-with-spinner__text
+		opacity: 0
+		transform: scale(0)
 
-.s-button-with-spinner.is-loading .s-button-with-spinner__loader
-	opacity: 1
-	transform: translate(-50%,-50%) scale(1)
+	.s-button-with-spinner.is-loading .s-button-with-spinner__loader
+		opacity: 1
+		transform: translate(-50%,-50%) scale(1)
 
-.s-button.disabled
-	outline: none!important
-	opacity: 0.6 !important
-	filter: slatescale(1) !important
-	cursor: default!important
-	pointer-events: none !important
+	.s-button.disabled
+		outline: none!important
+		background-color: var(--button-disabled-bg)
+		opacity: 0.6 !important
+		filter: slatescale(1) !important
+		cursor: default!important
+		pointer-events: none !important
 
-	user-select: none !important
-	background-color: var(--button-disabled-bg)
+		user-select: none !important

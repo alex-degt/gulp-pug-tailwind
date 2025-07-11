@@ -1,153 +1,180 @@
-.i-input
-	// Wrapper
-	--input-wrapper-y-gap: 6px
-	// Input - [default] state
-	--input-bg: var(--white)
-	--input-border-color: var(--slate-400)
-	--input-border-radius: 6px
-	--input-border-width: 1px
-	--input-font-size: 16px
-	--input-font-weight: 400
-	--input-height: 48px
-	--input-paddings-x: 16px
-	--input-placeholder-color: var(--slate-400)
-	--input-text-color: var(--black)
-	// Input - [hover] state
-	--input-hover-border-color: var(--sky-500)
-	// Input - [focus] state
-	--input-focus-outline-width: 4px
-	--input-focus-outline-style: solid
-	--input-focus-outline-color: var(--sky-200)
-	--input-focus-outline-offset: 0px
-	--input-focus-border-color: var(--sky-600)
-	// Input - [error] state
-	--input-error-border-color: var(--red-400)
-	--input-error-outline-color: var(--red-200)
-	--input-error-font-size: 16px
-	--input-error-font-weight: 400
-	--input-error-text-color: var(--red-500)
-	// Input - [disabled] state
-	--input-disabled-bg: var(--slate-100)
-	// Input - [all] states - NOTICE
-	--input-notice-font-size: 16px
-	--input-notice-font-weight: 400
-	--input-notice-text-color: var(--slate-400)
-	// Input - TEXTAREA
-	--textarea-height: 140px
+@layer components
+	.i-input
+		// Wrapper
+		--input-wrapper-y-gap: 6px
+		// Input - [default] state
+		--input-bg: var(--color-white)
+		--input-border-color: var(--color-slate-400)
+		--input-border-radius: 6px
+		--input-border-width: 1px
+		--input-font-size: 16px
+		--input-font-weight: 400
+		--input-height: 48px
+		--input-paddings-x: 16px
+		--input-placeholder-color: var(--color-slate-400)
+		--input-text-color: var(--color-black)
+		// Input - [hover] state
+		--input-hover-border-color: var(--color-sky-500)
+		// Input - [focus] state
+		--input-focus-outline-width: 4px
+		--input-focus-outline-style: solid
+		--input-focus-outline-color: var(--color-sky-200)
+		--input-focus-outline-offset: 0px
+		--input-focus-border-color: var(--color-sky-600)
+		// Input - [error] state
+		--input-error-border-color: var(--color-red-400)
+		--input-error-outline-color: var(--color-red-200)
+		--input-error-font-size: 16px
+		--input-error-font-weight: 400
+		--input-error-text-color: var(--color-red-500)
+		// Input - [disabled] state
+		--input-disabled-bg: var(--color-slate-100)
+		// Input - [all] states - NOTICE
+		--input-notice-font-size: 16px
+		--input-notice-font-weight: 400
+		--input-notice-text-color: var(--color-slate-400)
+		// Input - TEXTAREA
+		--textarea-height: 140px
 
-input
-	font-feature-settings: "lnum"
+	input
+		font-feature-settings: "lnum"
 
-.i-input
-	display: flex
-	flex-direction: column
+	.i-input
+		display: flex
+		flex-direction: column
 
-	gap: var(--input-wrapper-y-gap)
+		gap: var(--input-wrapper-y-gap)
 
-.i-input__inner
-	position: relative
-	display: flex
-	flex-direction: column-reverse
-	width: 100%
+	.i-input__inner
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		width: 100%
 
-.i-input__field
-	padding-right: var(--input-paddings-x)
-	padding-left: var(--input-paddings-x)
-	width: 100%
-	height: var(--input-height)
-	outline: none
-	border: var(--input-border-width) solid var(--input-border-color)
-	border-radius: var(--input-border-radius)
-	background-color: var(--input-bg)
-	color: var(--input-text-color)
-	font-weight: var(--input-font-weight)
-	font-size: var(--input-font-size)
-	line-height: 1.2
-	&::placeholder
-		color: var(--input-placeholder-color)
-
-textarea.i-input__field
-	padding: var(--input-paddings-x)
-	width: 100%
-	height: var(--textarea-height)
-	resize: none
-
-.i-input__field
-	&:hover
-		border-color: var(--input-hover-border-color)
-	&:focus
-		outline-width: var(--input-focus-outline-width)
-		outline-style: var(--input-focus-outline-style)
-		outline-color: var(--input-focus-outline-color)
-		outline-offset: var(--input-focus-outline-offset)
-		border-color: var(--input-focus-border-color)
-
-// Error state
-.i-input
-	.i-input-error
-		display: none
-
-.i-input.i-error
-	.i-input-error
-		display: block
-	.i-input-notice
-		display: none
 	.i-input__field
-		border-color: var(--input-error-border-color)
-		&:focus
-			outline-color: var(--input-error-outline-color)
-
-// Error message styles
-.i-input-error
-	padding-left: var(--input-paddings-x)
-	color: var(--input-error-text-color)
-	font-weight: var(--input-error-font-weight)
-	font-size: var(--input-error-font-size)
-	line-height: 1.2
-	&:empty
-		display: none
-
-// Notice message styles
-.i-input
-	.i-input-notice
+		padding-right: var(--input-paddings-x)
 		padding-left: var(--input-paddings-x)
-		color: var(--input-notice-text-color)
-		font-weight: var(--input-notice-font-weight)
-		font-size: var(--input-notice-font-size)
+		width: 100%
+		height: var(--input-height)
+		outline: none
+		border: var(--input-border-width) solid var(--input-border-color)
+		border-radius: var(--input-border-radius)
+		background-color: var(--input-bg)
+		color: var(--input-text-color)
+		font-weight: var(--input-font-weight)
+		font-size: var(--input-font-size)
+		line-height: 1.2
+		&::placeholder
+			color: var(--input-placeholder-color)
+
+	textarea.i-input__field
+		padding: var(--input-paddings-x)
+		width: 100%
+		height: var(--textarea-height)
+		resize: none
+
+	.i-input__field
+		&:hover
+			border-color: var(--input-hover-border-color)
+		&:focus
+			outline-width: var(--input-focus-outline-width)
+			outline-style: var(--input-focus-outline-style)
+			outline-color: var(--input-focus-outline-color)
+			outline-offset: var(--input-focus-outline-offset)
+			border-color: var(--input-focus-border-color)
+
+	// Error state
+	.i-input
+		.i-input-error
+			display: none
+
+	.i-input.i-error
+		.i-input-error
+			display: block
+		.i-input-notice
+			display: none
+		.i-input__field
+			border-color: var(--input-error-border-color)
+			&:focus
+				outline-color: var(--input-error-outline-color)
+
+	// Error message styles
+	.i-input-error
+		padding-left: var(--input-paddings-x)
+		color: var(--input-error-text-color)
+		font-weight: var(--input-error-font-weight)
+		font-size: var(--input-error-font-size)
 		line-height: 1.2
 		&:empty
 			display: none
 
-// Disabled state
-.i-input.disabled
-	outline: none!important
-	opacity: 0.6 !important
-	filter: slatescale(1) !important
-	cursor: default!important
-	pointer-events: none !important
+	// Notice message styles
+	.i-input
+		.i-input-notice
+			padding-left: var(--input-paddings-x)
+			color: var(--input-notice-text-color)
+			font-weight: var(--input-notice-font-weight)
+			font-size: var(--input-notice-font-size)
+			line-height: 1.2
+			&:empty
+				display: none
 
-	user-select: none !important
-	.select2-selection
-		background-color: var(--input-disabled-bg) !important
-	.i-input__field
+	// Disabled state
+	.i-input.disabled
 		outline: none!important
-		background-color: var(--input-disabled-bg) !important
-		&:hover,
-		&:focus,
-		&:active,
-		&:read-only:focus
-			outline: none!important
+		opacity: 0.6 !important
+		filter: slatescale(1) !important
+		cursor: default!important
+		pointer-events: none !important
 
-// Type password
-.i-input--password
-	.i-input__field
-		padding-right: 48px
-	.password-control
-		position: absolute
-		top: 50%
-		right: 16px
-		color: var(--input-placeholder-color)
-		transition: 0.3s
-		transform: translateY(-50%)
-		&:hover
-			color: var(--input-hover-border-color)
+		user-select: none !important
+		.select2-selection
+			background-color: var(--input-disabled-bg) !important
+		.i-input__field
+			outline: none!important
+			background-color: var(--input-disabled-bg) !important
+			&:hover,
+			&:focus,
+			&:active,
+			&:read-only:focus
+				outline: none!important
+
+	// Type password
+	.i-input--password
+		.i-input__field
+			padding-right: 48px
+		.password-control
+			position: absolute
+			top: 50%
+			right: 16px
+			color: var(--input-placeholder-color)
+			transition: 0.3s
+			transform: translateY(-50%)
+			&:hover
+				color: var(--input-hover-border-color)
+
+	// With icon
+	.i-input--with-icon
+		.i-input__field
+			padding-left: 48px
+		.i-input__inner
+			position: relative
+			&::before
+				position: absolute
+				top: 50%
+				left: 16px
+				width: 24px
+				height: 24px
+				background-image: var(--input-icon)
+				background-position: center
+				background-size: contain
+				background-repeat: no-repeat
+				content: ""
+				transform: translateY(-50%)
+				pointer-events: none
+
+				user-select: none
+
+	// Custom icon
+	.i-input--example
+		--input-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23020202' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21 21-4.34-4.34'/%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3C/svg%3E")

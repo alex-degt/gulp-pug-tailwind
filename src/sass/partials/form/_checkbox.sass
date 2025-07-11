@@ -1,152 +1,156 @@
-.i-checkbox
-	// Wrapper
-	--checkbox-wrapper-y-gap: 6px
-	// Checkbox - [default] state
-	--checkbox-size: 22px
-	--checkbox-to-content-gap: 8px
-	--checkbox-bg: var(--white)
-	--checkbox-border-width: 1px
-	--checkbox-border-color: var(--slate-400)
-	--checkbox-border-radius: 4px
-	// Checkbox - [hover] state
-	--checkbox-hover-outline-width: 4px
-	--checkbox-hover-outline-style: solid
-	--checkbox-hover-outline-color: var(--sky-200)
-	--checkbox-hover-outline-offset: 0px
-	--checkbox-hover-border-color: var(--sky-500)
-	// Checkbox - [checked] state
-	--checkbox-checked-bg: var(--sky-500)
-	--checkbox-checked-border-color: var(--sky-500)
-	// Checkbox - [checked] state - ICON
-	--checkbox-checked-icon-width: 14px
-	--checkbox-checked-icon-height: 11px
-	--checkbox-checked-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 9'%3E%3Cpath fill='%237E8695' fill-rule='evenodd' d='M4.5 8.125.75 4.405l1.192-1.178L4.5 5.764 10.057.25l1.193 1.185-6.75 6.69Z' clip-rule='evenodd'/%3E%3C/svg%3E")
-	// Checkbox - [error] state
-	--checkbox-error-outline-color: var(--red-200)
-	--checkbox-error-border-color: var(--red-400)
-	--checkbox-error-text-font-size: 16px
-	--checkbox-error-text-font-weight: 500
-	--checkbox-error-text-color: var(--red-400)
-	// Input - [disabled] state
-	--checkbox-disabled-bg: var(--slate-400)
-	// Checkbox - [all] states - CONTENT
-	--checkbox-content-font-size: 16px
-	--checkbox-content-font-weight: 400
-	--checkbox-content-color: var(--black)
-	// Checkbox - [all] states - NOTICE
-	--checkbox-notice-font-size: 16px
-	--checkbox-notice-font-weight: 400
-	--checkbox-notice-text-color: var(--slate-400)
+@layer components
+	.i-checkbox
+		// Wrapper
+		--checkbox-wrapper-y-gap: 6px
+		// Checkbox - [default] state
+		--checkbox-size: 22px
+		--checkbox-to-content-gap: 8px
+		--checkbox-bg: var(--color-white)
+		--checkbox-border-width: 1px
+		--checkbox-border-color: var(--color-slate-400)
+		--checkbox-border-radius: 4px
+		// Checkbox - [hover] state
+		--checkbox-hover-outline-width: 4px
+		--checkbox-hover-outline-style: solid
+		--checkbox-hover-outline-color: var(--color-sky-200)
+		--checkbox-hover-outline-offset: 0px
+		--checkbox-hover-border-color: var(--color-sky-500)
+		// Checkbox - [checked] state
+		--checkbox-checked-bg: var(--color-sky-500)
+		--checkbox-checked-border-color: var(--color-sky-500)
+		// Checkbox - [checked] state - ICON
+		--checkbox-checked-icon-width: 14px
+		--checkbox-checked-icon-height: 11px
+		--checkbox-checked-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 9'%3E%3Cpath fill='%237E8695' fill-rule='evenodd' d='M4.5 8.125.75 4.405l1.192-1.178L4.5 5.764 10.057.25l1.193 1.185-6.75 6.69Z' clip-rule='evenodd'/%3E%3C/svg%3E")
+		// Checkbox - [error] state
+		--checkbox-error-outline-color: var(--color-red-200)
+		--checkbox-error-border-color: var(--color-red-400)
+		--checkbox-error-text-font-size: 16px
+		--checkbox-error-text-font-weight: 500
+		--checkbox-error-text-color: var(--color-red-400)
+		// Input - [disabled] state
+		--checkbox-disabled-bg: var(--color-slate-400)
+		// Checkbox - [all] states - CONTENT
+		--checkbox-content-font-size: 16px
+		--checkbox-content-font-weight: 400
+		--checkbox-content-color: var(--color-black)
+		// Checkbox - [all] states - NOTICE
+		--checkbox-notice-font-size: 16px
+		--checkbox-notice-font-weight: 400
+		--checkbox-notice-text-color: var(--color-slate-400)
 
-.i-checkbox
-	display: flex
-	flex-direction: column
-	gap: var(--checkbox-wrapper-y-gap)
+	.i-checkbox
+		display: flex
+		flex-direction: column
 
-.i-checkbox__inner
-	display: flex
-	align-items: flex-start
-	outline: none
-	cursor: pointer
-	transition: 0.3s
-	gap: var(--checkbox-to-content-gap)
-	&:hover
-		.i-checkbox__fake
-			outline-width: var(--checkbox-hover-outline-width)
-			outline-style: var(--checkbox-hover-outline-style)
-			outline-color: var(--checkbox-hover-outline-color)
-			outline-offset: var(--checkbox-hover-outline-offset)
-			border-color: var(--checkbox-hover-border-color)
+		gap: var(--checkbox-wrapper-y-gap)
 
-.i-checkbox__fake
-	position: relative
-	display: block
-	flex-shrink: 0
-	width: var(--checkbox-size)
-	height: var(--checkbox-size)
-	border: var(--checkbox-border-width) solid var(--checkbox-border-color)
-	border-radius: var(--checkbox-border-radius)
-	background-color: var(--checkbox-bg)
+	.i-checkbox__inner
+		display: flex
+		align-items: flex-start
+		outline: none
+		cursor: pointer
+		transition: 0.3s
 
-.i-checkbox__inner
-	input:checked + .i-checkbox__fake
-		border-color: var(--checkbox-checked-border-color)
-		background-color: var(--checkbox-checked-bg)
-		&::before
-			position: absolute
-			top: 50%
-			left: 50%
-			width: var(--checkbox-checked-icon-width)
-			height: var(--checkbox-checked-icon-height)
-			background-image: var(--checkbox-checked-icon)
-			filter: invert(1) brightness(4)
-			background-position: center
-			background-size: contain
-			background-repeat: no-repeat
-			content: ""
-			transform: translate(-50%, -50%)
+		gap: var(--checkbox-to-content-gap)
+		&:hover
+			.i-checkbox__fake
+				outline-width: var(--checkbox-hover-outline-width)
+				outline-style: var(--checkbox-hover-outline-style)
+				outline-color: var(--checkbox-hover-outline-color)
+				outline-offset: var(--checkbox-hover-outline-offset)
+				border-color: var(--checkbox-hover-border-color)
 
-.i-checkbox__content
-	margin-top: 2px
-	color: var(--checkbox-content-color)
-	font-weight: var(--checkbox-content-font-weight)
-	font-size: var(--checkbox-content-font-size)
-	line-height: 1.25
+	.i-checkbox__fake
+		position: relative
+		display: block
+		flex-shrink: 0
+		width: var(--checkbox-size)
+		height: var(--checkbox-size)
+		border: var(--checkbox-border-width) solid var(--checkbox-border-color)
+		border-radius: var(--checkbox-border-radius)
+		background-color: var(--checkbox-bg)
 
-.i-checkbox
-	.i-input-error,
-	.i-input-notice
-		padding-left: calc(var(--checkbox-size) + var(--checkbox-to-content-gap))
-		&:empty
+	.i-checkbox__inner
+		input:checked + .i-checkbox__fake
+			border-color: var(--checkbox-checked-border-color)
+			background-color: var(--checkbox-checked-bg)
+			&::before
+				position: absolute
+				top: 50%
+				left: 50%
+				width: var(--checkbox-checked-icon-width)
+				height: var(--checkbox-checked-icon-height)
+				background-image: var(--checkbox-checked-icon)
+				background-position: center
+				background-size: contain
+				background-repeat: no-repeat
+				content: ""
+				filter: invert(1) brightness(4)
+				transform: translate(-50%, -50%)
+
+	.i-checkbox__content
+		margin-top: 2px
+		color: var(--checkbox-content-color)
+		font-weight: var(--checkbox-content-font-weight)
+		font-size: var(--checkbox-content-font-size)
+		line-height: 1.25
+
+	.i-checkbox
+		.i-input-error,
+		.i-input-notice
+			padding-left: calc(var(--checkbox-size) + var(--checkbox-to-content-gap))
+			&:empty
+				display: none
+
+	// Error state
+	.i-checkbox
+		.i-input-error
 			display: none
 
-// Error state
-.i-checkbox
-	.i-input-error
-		display: none
+	.i-checkbox.i-error
+		.i-input-error
+			display: block
+		.i-input-notice
+			display: none
+		.i-checkbox__fake
+			outline-color: var(--checkbox-error-outline-color)
+			border-color: var(--checkbox-error-border-color) !important
 
-.i-checkbox.i-error
-	.i-input-error
-		display: block
-	.i-input-notice
-		display: none
-	.i-checkbox__fake
-		border-color: var(--checkbox-error-border-color) !important
-		outline-color: var(--checkbox-error-outline-color)
+	// Error message styles
+	.i-checkbox
+		.i-input-error
+			margin: 0
+			color: var(--checkbox-error-text-color)
+			font-weight: var(--checkbox-error-text-font-weight)
+			font-size: var(--checkbox-error-text-font-size)
+			line-height: 1.2
 
-// Error message styles
-.i-checkbox
-	.i-input-error
-		margin: 0
-		color: var(--checkbox-error-text-color)
-		font-weight: var(--checkbox-error-text-font-weight)
-		font-size: var(--checkbox-error-text-font-size)
-		line-height: 1.2
+	// Notice message styles
+	.i-checkbox
+		.i-input-notice
+			margin: 0
+			color: var(--checkbox-notice-text-color)
+			font-weight: var(--checkbox-notice-font-weight)
+			font-size: var(--checkbox-notice-font-size)
+			line-height: 1.2
 
-// Notice message styles
-.i-checkbox
-	.i-input-notice
-		margin: 0
-		color: var(--checkbox-notice-text-color)
-		font-weight: var(--checkbox-notice-font-weight)
-		font-size: var(--checkbox-notice-font-size)
-		line-height: 1.2
-
-// Disabled state
-.i-checkbox.disabled
-	outline: none!important
-	opacity: 0.6 !important
-	filter: grayscale(1) !important
-	cursor: default!important
-	pointer-events: none !important
-	user-select: none !important
-	.i-checkbox__fake
-		background-color: var(--checkbox-disabled-bg) !important
-	label,
-	input
+	// Disabled state
+	.i-checkbox.disabled
 		outline: none!important
-		&:hover,
-		&:focus,
-		&:active,
-		&:read-only:focus
+		opacity: 0.6 !important
+		filter: grayscale(1) !important
+		cursor: default!important
+		pointer-events: none !important
+
+		user-select: none !important
+		.i-checkbox__fake
+			background-color: var(--checkbox-disabled-bg) !important
+		label,
+		input
 			outline: none!important
+			&:hover,
+			&:focus,
+			&:active,
+			&:read-only:focus
+				outline: none!important
