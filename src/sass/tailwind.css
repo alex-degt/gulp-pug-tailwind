@@ -23,20 +23,21 @@
 @plugin "@tailwindcss/typography";
 /* @plugin "@tailwindcss/aspect-ratio"; */
 
-/* @utility container {
+/* Custom .container styles */
+@utility container {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 16px;
 	padding-left: 16px;
 	max-width: 1236px;
 	width: 100%;
-} */
+}
 
 @theme {
 	/* Base font */
 	--font-sans: "Roboto", "sans-serif";
 	/* Additional font */
-	--font-custom: "Unbounded", "sans-serif";
+	--font-custom: "ADDITIONAL-EXAMPLE-FONT", "sans-serif";
 	/* Example of custom breakpoint */
 	--breakpoint-100xl: 1000px;
 	/* Example of custom color */
