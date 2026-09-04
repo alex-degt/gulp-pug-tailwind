@@ -12,6 +12,5 @@
 	"pugClassNotation": "attribute",
 	"pugIdNotation": "literal",
 	"pugPreserveAttributeBrackets": false,
-	"plugins": ["@prettier/plugin-pug", "prettier-plugin-tailwindcss"],
-	"pluginSearchDirs": false
+	"plugins": ["@prettier/plugin-pug", "prettier-plugin-tailwindcss"]
 }

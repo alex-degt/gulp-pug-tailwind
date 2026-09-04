@@ -35,9 +35,9 @@
 
 @theme {
 	/* Base font */
-	--font-sans: "Roboto", "sans-serif";
+	--font-sans: "Roboto", sans-serif;
 	/* Additional font */
-	--font-custom: "ADDITIONAL-EXAMPLE-FONT", "sans-serif";
+	--font-custom: "ADDITIONAL-EXAMPLE-FONT", sans-serif;
 	/* Example of custom breakpoint */
 	--breakpoint-100xl: 1000px;
 	/* Example of custom color */
